@@ -1,0 +1,69 @@
+@import "tailwindcss";
+@import "../node_modules/@fortawesome/fontawesome-free/css/all.min.css";
+
+/* Horizontal Bounce Animation */
+@keyframes bounce-x {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(30px);
+  }
+}
+
+/* Vertical Bounce Animation */
+@keyframes bounce-y {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px); /* Adjust bounce height */
+  }
+}
+
+/* Rotation Animation */
+@keyframes rotate-circle {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+/* Apply horizontal bounce animation */
+.bounce-x {
+  animation: bounce-x 3s linear infinite;
+}
+
+/* Apply vertical bounce animation */
+.bounce-y {
+  animation: bounce-y 2.5s ease-in-out infinite;
+}
+
+/* Apply rotation animation */
+.rotate-circle {
+  animation: rotate-circle 6s linear infinite;
+}
+
+@keyframes marquee-left {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+
+@keyframes marquee-right {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.animate-marquee-left {
+  display: flex;
+  animation: marquee-left 10s linear infinite;
+  width: max-content;
+}
+
+.animate-marquee-right {
+  display: flex;
+  animation: marquee-right 10s linear infinite;
+  width: max-content;
+}
