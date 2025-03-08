@@ -3,29 +3,19 @@ import { Link, useLocation } from "react-router-dom";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
-  const [dropdownOpen, setDropdownOpen] = useState(null);
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [isScrolled, setIsScrolled] = useState(false);
   const navRef = useRef(null);
   const location = useLocation();
+  const isHomePage = location.pathname === "/";
 
-  const toggleDropdown = (menu) => {
-    setDropdownOpen(dropdownOpen === menu ? null : menu);
-  };
 
-  // Detect Scroll Direction and Background Change
   useEffect(() => {
     const handleScroll = () => {
       const currentScroll = window.scrollY;
-
-      if (currentScroll > lastScrollY) {
-        setIsVisible(false); 
-      } else {
-        setIsVisible(true);
-      }
-
-      setIsScrolled(currentScroll > 50); 
+      setIsVisible(currentScroll <= lastScrollY);
+      setIsScrolled(currentScroll > 50);
       setLastScrollY(currentScroll);
     };
 
@@ -33,12 +23,10 @@ export default function Header() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, [lastScrollY]);
 
-  // Close navbar when clicking outside
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (navRef.current && !navRef.current.contains(event.target)) {
         setIsOpen(false);
-        setDropdownOpen(null);
       }
     };
 
@@ -46,106 +34,80 @@ export default function Header() {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
+ 
+
   return (
     <div
-      className={`fixed w-full z-[999] top-0 left-0 right-0 transition-all duration-300 ${
-        isVisible ? "translate-y-0" : "-translate-y-full"
-      } ${isScrolled ? "bg-[#6b47edcc]" : "bg-transparent"} `}
-    >
-      <div className="flex justify-between items-center max-w-[90%] mx-auto py-6">
+  className={`fixed w-full z-[999] top-0 py-3 left-0 right-0 transition-all duration-300 ${
+    isVisible ? "translate-y-0" : "-translate-y-full"
+  } ${isScrolled || !isHomePage ? "bg-[#11778B]" : "bg-transparent"}`}
+>
+      <div className="flex justify-between items-center max-w-[1440px] mx-auto">
         <div className="cursor-pointer">
-          <img src="" alt="Logo" />
+          <Link to="/">
+            <img src="lllArtboard 7.png" alt="Logo" className="h-20 w-70 md:w-full" />
+          </Link>
         </div>
 
         <div className="lg:hidden cursor-pointer" onClick={() => setIsOpen(!isOpen)}>
-          <i className="fa-solid fa-bars text-black"></i>
+          <i className="fa-solid fa-bars text-white text-2xl"></i>
         </div>
 
         <nav
           ref={navRef}
-          className={`lg:flex items-center absolute gap-10 flex-col lg:flex-row lg:static top-[70px] w-full lg:w-auto right-0 bg-black lg:bg-transparent py-5 lg:py-0 transition-all duration-300 shadow-lg lg:shadow-none z-50 ${
+          className={`lg:flex items-center absolute gap-10 flex-col lg:flex-row lg:static top-[100px] w-full lg:w-auto right-0 bg-black lg:bg-transparent py-5 lg:py-0 transition-all duration-300 shadow-lg lg:shadow-none z-50 lg:text-[18px] ${
             isOpen ? "flex" : "hidden"
           }`}
         >
-          {/* Dynamic text color change based on path */}
           <Link
             to="/"
             onClick={() => setIsOpen(false)}
             className={`font-medium hover:text-[#C6F806] flex items-center gap-2 ${
-              location.pathname !== "/" ? "text-black" : "text-white"
+              location.pathname !== "/" ? "lg:text-white text-white" : "text-white"
             }`}
           >
             Home
           </Link>
-          {/* <Link
-            to="/page"
+
+          <Link
+            to="/"
             onClick={() => setIsOpen(false)}
             className={`font-medium hover:text-[#C6F806] flex items-center gap-2 ${
-              location.pathname !== "/" ? "text-black" : "text-white"
+              location.pathname !== "/" ? "lg:text-white text-white" : "text-white"
             }`}
           >
-            Page
-          </Link> */}
+            About Us
+          </Link>
 
-          {/* Services Dropdown */}
-          <div className="relative">
-            <button
-              onClick={() => toggleDropdown("services")}
-              className={`font-medium hover:text-[#C6F806] flex items-center gap-2 ${
-                location.pathname !== "/" ? "text-black" : "text-white"
-              }`}
-            >
-              Services <i className="fa-solid fa-chevron-down text-[10px]"></i>
-            </button>
-            {dropdownOpen === "services" && (
-              <div className="absolute left-0 mt-2 w-55 bg-white text-black z-[10] rounded-md shadow-lg">
-                <Link to="/" className="block px-4 py-2 hover:rounded-t-lg hover:bg-[#C6F806]">Web Development</Link>
-                <Link to="/" className="block px-4 py-2 hover:bg-[#C6F806]">Digital Marketing</Link>
-                <Link to="/" className="block px-4 py-2 hover:rounded-b-lg hover:bg-[#C6F806]">Mobile App Development</Link>
-              </div>
-            )}
-          </div>
+          <Link
+            to="/"
+            onClick={() => setIsOpen(false)}
+            className={`font-medium hover:text-[#C6F806] flex items-center gap-2 ${
+              location.pathname !== "/" ? "lg:text-white text-white" : "text-white"
+            }`}
+          >
+            Our Services
+          </Link>
 
-          {/* Other Dropdowns (Projects, Blog) */}
-          <div className="relative">
-            <button
-              onClick={() => toggleDropdown("project")}
-              className={`font-medium hover:text-[#C6F806] flex items-center gap-2 ${
-                location.pathname !== "/" ? "text-black" : "text-white"
-              }`}
-            >
-              Project <i className="fa-solid fa-chevron-down text-[10px]"></i>
-            </button>
-            {dropdownOpen === "project" && (
-              <div className="absolute left-0 mt-2 w-48 bg-white text-black z-10 rounded-md shadow-lg">
-                <Link to="/" className="block px-4 py-2 hover:bg-[#C6F806]">Project 1</Link>
-                <Link to="/" className="block px-4 py-2 hover:bg-[#C6F806]">Project 2</Link>
-                <Link to="/" className="block px-4 py-2 hover:bg-[#C6F806]">Project 3</Link>
-              </div>
-            )}
-          </div>
-
-          {/* Contact Link */}
           <Link
             to="/contact"
             onClick={() => setIsOpen(false)}
             className={`font-medium hover:text-[#C6F806] flex items-center gap-2 ${
-              location.pathname !== "/" ? "text-black" : "text-white"
+              location.pathname !== "/" ? "lg:text-white text-white" : "text-white"
             }`}
           >
-            Contact
+            Contact Us
           </Link>
         </nav>
 
-        <div className="lg:flex hidden items-center">
-          <i className={`fa-solid fa-magnifying-glass cursor-pointer pr-5 ${
-              location.pathname !== "/" ? "text-black" : "text-white"
-            }`}></i>
-          <button className="bg-[#C6F806] text-black font-medium px-4 py-2 rounded-full hover:bg-black hover:text-white">
-            GET STARTED
-          </button>
-          <i className="fa-solid fa-right-long bg-[#C6F806] p-3 rounded-full cursor-pointer hover:text-white hover:bg-black"></i>
-        </div>
+        <Link to="/contact" className="hidden lg:flex">
+          <div className="items-center group">
+            <button className="bg-[#C6F806] cursor-pointer text-black font-medium px-4 py-2 rounded-full transition duration-300">
+              GET STARTED
+            </button>
+            <i className="fa-solid fa-right-long -rotate-45 ease-in-out group-hover:rotate-0 bg-[#C6F806] p-3 rounded-full cursor-pointer transition duration-300"></i>
+          </div>
+        </Link>
       </div>
     </div>
   );

@@ -9,6 +9,7 @@ export default function Main() {
         <main>
             <Outlet />
         </main>
+        
     </div>
   )
 }
