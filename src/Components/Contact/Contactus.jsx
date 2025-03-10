@@ -32,7 +32,7 @@ export default function Contactus() {
                 </div>
             )}
             {location.pathname === '/contact' && (
-                <div className="grid grid-cols-1 md:grid-cols-3 max-w-[90%] max-w-[1344px] mx-auto gap-5 pt-10">
+                <div className="grid grid-cols-1 md:grid-cols-3 max-w-[1344px] mx-auto gap-5 pt-10">
                     {[
                         {
                             icon: "fa-location-dot",
@@ -58,8 +58,14 @@ export default function Contactus() {
                     ))}
                 </div>
             )}
+{location.pathname === '/' && (
+            <div className='flex flex-col max-w-[1344px] mx-auto'>
+            <h1 className='font-medium text-[20px] pb-3'>CONTACT US</h1>
+            <p className='text-5xl font-bold'>How can we help you today?</p>
+            </div>
+)}
 
-            <div className="py-10 items-center grid grid-cols-1 lg:grid-cols-2 max-w-[1344px] mx-auto gap-10  lg:gap-10">
+            <div className="py-10 grid grid-cols-1 lg:grid-cols-2 max-w-[1344px] mx-auto gap-10  lg:gap-10">
                 {/* Google Map */}
                 <div className="w-full h-64 md:h-96 ">
                     <iframe
@@ -71,10 +77,7 @@ export default function Contactus() {
                 </div>
 
                 <div className="flex flex-col gap-5">
-                    <h1 className="text-3xl md:text-5xl font-bold">Ready to Get Started?</h1>
-                    <p className="text-sm md:text-base text-gray-700">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Omnis maiores repellat, sed neque eaque laborum quis commodi iste voluptatem laudantium totam modi.
-                    </p>
+                    <p className='text-3xl font-medium'>Get In Touch</p>
 
                     {/* Name & Email Side by Side */}
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-5">

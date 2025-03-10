@@ -90,7 +90,7 @@ export default function Header() {
           </Link>
 
           <Link
-            to="/contact"
+            to="/"
             onClick={() => setIsOpen(false)}
             className={`font-medium hover:text-[#C6F806] flex items-center gap-2 ${
               location.pathname !== "/" ? "lg:text-white text-white" : "text-white"

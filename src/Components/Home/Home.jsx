@@ -6,6 +6,7 @@ import WhyServiceUsComponent from '../Services/Components/HomeComponents/WhyServ
 import CollabrationComponent from '../Services/Components/HomeComponents/CollabrationComponent';
 import ProjectsComponent from '../Services/Components/HomeComponents/ProjectsComponent';
 import TestimonialComponent from '../Services/Components/HomeComponents/TestimonialComponent';
+import Contactus from '../Contact/Contactus';
 
 export default function Home() {
   const [showButton, setShowButton] = useState(false);
@@ -29,7 +30,9 @@ export default function Home() {
       <CollabrationComponent />
       <ProjectsComponent />
       <TestimonialComponent />
-      
+      <div className='py-10 bg-cover bg-no-repeat' style={{ backgroundImage: "url('ContactBG.png')" }}>
+      <Contactus />
+      </div>
       {/* Scroll-to-Top Button */}
       {showButton && (
         <button

@@ -46,7 +46,7 @@ export default function TestimonialComponent() {
             <h1 className='font-medium text-[20px] pb-3 '>TESTIMONIALS</h1>
             <div className='flex flex-col md:flex-row justify-between items-start md:items-center'>
                 <h1 className='font-bold text-4xl md:text-5xl md:w-6/12'>What Our Awesome Customers Say</h1>
-                <p className='md:w-5/12 text-gray-600'>A long-established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+                <p className='md:w-5/12 text-gray-600 text-[20px] font-medium'>A long-established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
             </div>
 
             <div className='grid grid-cols-1 md:grid-cols-12 gap-8 py-10'>
@@ -64,12 +64,12 @@ export default function TestimonialComponent() {
 
                     <div className='flex gap-3'>
                         <button 
-                            className='bg-[#C6F806] px-4 py-2 rounded-full' 
+                            className='bg-[#C6F806] px-4 py-2 rounded-full cursor-pointer' 
                             onClick={() => setActiveIndex((activeIndex - 1 + testimonials.length) % testimonials.length)}>
                             <i className="fa-solid fa-chevron-left"></i>
                         </button>
                         <button 
-                            className='bg-[#C6F806] px-4 py-2 rounded-full' 
+                            className='bg-[#C6F806] px-4 py-2 rounded-full cursor-pointer' 
                             onClick={() => setActiveIndex((activeIndex + 1) % testimonials.length)}>
                             <i className="fa-solid fa-chevron-right"></i>
                         </button>
