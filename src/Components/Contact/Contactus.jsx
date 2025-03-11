@@ -19,7 +19,7 @@ export default function Contactus() {
 
                     <div className="text-black flex flex-col justify-center items-center mt-20 py-16 md:py-30 gap-5 rounded-2xl bg-[#f6f3fe] text-center">
                         <h1 className="text-3xl md:text-5xl font-bold">Contact Us</h1>
-                        <div className="flex items-center border-2 border-[#BF20FC] rounded-full px-5 py-2 gap-3">
+                        <div className="flex items-center border-2 border-[#11778B] rounded-full px-5 py-2 gap-3">
                             <Link to="/" className="text-sm md:text-base font-medium hover:text-[#C6F806]">
                                 Home
                             </Link>
@@ -51,7 +51,7 @@ export default function Contactus() {
                         },
                     ].map((item, index) => (
                         <div key={index} className="bg-[#f6f3fe] p-6 md:p-10 rounded-lg text-center flex flex-col gap-5 items-center">
-                            <i className={`fa-solid ${item.icon} text-5xl md:text-7xl text-[#6A47ED]`}></i>
+                            <i className={`fa-solid ${item.icon} text-5xl md:text-7xl text-[#11778B]`}></i>
                             <p className="text-xl md:text-2xl font-bold">{item.title}</p>
                             <span className="text-sm md:text-lg px-10 md:px-0 lg:px-15 ">{item.text}</span>
                         </div>
@@ -61,7 +61,7 @@ export default function Contactus() {
 {location.pathname === '/' && (
             <div className='flex flex-col max-w-[1344px] mx-auto'>
             <h1 className='font-medium text-[20px] pb-3'>CONTACT US</h1>
-            <p className='text-5xl font-bold'>How can we help you today?</p>
+            <p className='text-5xl font-bold pb-10'>How can we help you today?</p>
             </div>
 )}
 
@@ -77,7 +77,7 @@ export default function Contactus() {
                 </div>
 
                 <div className="flex flex-col gap-5">
-                    <p className='text-3xl font-medium'>Get In Touch</p>
+                    <p className='text-3xl font-bold'>Get In Touch</p>
 
                     {/* Name & Email Side by Side */}
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
@@ -87,7 +87,7 @@ export default function Contactus() {
                                 type="text"
                                 id="name"
                                 placeholder=" "
-                                className="border border-gray-300 rounded-lg p-3 w-full peer focus:border-[#6A47ED] focus:ring-1 focus:ring-[#6A47ED] focus:outline-none"
+                                className="border border-gray-300 rounded-lg p-3 w-full peer focus:border-[#11778B] focus:ring-1 focus:ring-[#11778B] focus:outline-none"
                             />
                             <label
                                 htmlFor="name"
@@ -103,7 +103,7 @@ export default function Contactus() {
                                 type="email"
                                 id="email"
                                 placeholder=" "
-                                className="border border-gray-300 rounded-lg p-3 w-full peer focus:border-[#6A47ED] focus:ring-1 focus:ring-[#6A47ED] focus:outline-none"
+                                className="border border-gray-300 rounded-lg p-3 w-full peer focus:border-[#11778B] focus:ring-1 focus:ring-[#11778B] focus:outline-none"
                             />
                             <label
                                 htmlFor="email"
@@ -120,7 +120,7 @@ export default function Contactus() {
                             id="message"
                             placeholder=" "
                             rows="4"
-                            className="border border-gray-300 rounded-lg p-3 w-full peer focus:border-[#6A47ED] focus:ring-1 focus:ring-[#6A47ED] focus:outline-none"
+                            className="border border-gray-300 rounded-lg p-3 w-full peer focus:border-[#11778B] focus:ring-1 focus:ring-[#11778B] focus:outline-none"
                         ></textarea>
                         <label
                             htmlFor="message"
@@ -131,8 +131,8 @@ export default function Contactus() {
                     </div>
 
                     {/* Submit Button */}
-                    <div className='flex justify-center md:justify-normal'>
-                    <button className="bg-[#6A47ED] text-white py-3 rounded-lg text-lg px-3 font-semibold hover:bg-[#6b47edec] transition">
+                    <div className='flex justify-center  md:justify-normal'>
+                    <button className="bg-[#11778B] cursor-pointer text-white py-3 rounded-lg text-lg px-3 font-semibold hover:bg-[#11778bda] transition">
                         Send Message
                     </button>
                     </div>

@@ -30,14 +30,14 @@ export default function Home() {
       <CollabrationComponent />
       <ProjectsComponent />
       <TestimonialComponent />
-      <div className='py-10 bg-cover bg-no-repeat' style={{ backgroundImage: "url('ContactBG.png')" }}>
+      <div className='pb-20 bg-cover bg-no-repeat' style={{ backgroundImage: "url('ContactBG.png')" }}>
       <Contactus />
       </div>
       {/* Scroll-to-Top Button */}
       {showButton && (
         <button
           onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
-          className="fixed bottom-6 right-6 bg-[#C6F806] z-100 cursor-pointer text-black px-2 py-2.5 rounded-full shadow-lg hover:bg-black hover:text-white transition-all"
+          className="fixed bottom-6 right-6 bg-[#11778B] z-100 cursor-pointer  px-2 py-2.5 rounded-full shadow-lg hover:scale-105 text-white transition-all"
         >
           <i className="fa-solid px-2 fa-angles-up"></i>
         </button>

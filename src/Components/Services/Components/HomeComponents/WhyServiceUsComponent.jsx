@@ -3,20 +3,20 @@ import { Link } from 'react-router-dom';
 
 export default function WhyServiceUsComponent() {
   return (
-    <div className="max-w-[1344px] mx-auto py-20">
+    <div className="max-w-[1344px] mx-auto pb-20">
       {/* Header Section */}
       <h1 className="font-medium text-[20px] pb-3 ">WHY CHOOSE US</h1>
       <div className="flex flex-col md:flex-row justify-between items-center pb-10 text-center md:text-left">
         <p className="text-5xl text-left w-full">
-          Innovative <span className="text-[#C6F806] font-bold">Tech Solutions</span> for Your Business
+          Innovative <span className="text-[#11778B] font-bold">Tech Solutions</span> for Your Business
         </p>
         <div className="flex w-full mt-4 md:mt-0 justify-start md:justify-end">
           <Link to="/contact">
-          <div className='group'>
-          <button className="border-2 z-10 cursor-pointer text-black font-medium px-4 py-2 rounded-full transition duration-300 ">
+          <div className='group text-white'>
+          <button className="bg-[#11778B] z-10 cursor-pointer  font-medium px-4 py-2 rounded-full transition duration-300 ">
             Contact Us
           </button>
-          <i className="fa-solid fa-right-long z-10 -rotate-45 easy-in-out group-hover:rotate-0 bg-[#C6F806] p-3 rounded-full cursor-pointer transition duration-300 group-hover:text-white group-hover:bg-black"></i>
+          <i className="fa-solid fa-right-long z-10 -rotate-45 easy-in-out  group-hover:rotate-0 bg-[#11778B] p-3 rounded-full cursor-pointer transition duration-300"></i>
           </div>
           </Link>
         </div>

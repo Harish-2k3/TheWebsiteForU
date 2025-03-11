@@ -3,76 +3,76 @@ import { Link } from "react-router-dom";
 
 export default function AllServicesComponent() {
   const [selectedService, setSelectedService] = useState("Digital Marketing");
+  const [expandedSections, setExpandedSections] = useState({});
+
+  const toggleExpand = (section) => {
+    setExpandedSections((prev) => ({
+      ...prev,
+      [section]: !prev[section],
+    }));
+  };
 
   const services = [
     {
+      img: "services.jpg",
       name: "Digital Marketing",
       icon: "fa-chart-line",
-      description: "Boost your brand with expert SEO, PPC, and social media strategies to drive traffic and increase engagement.",
-      details: `Our digital marketing services focus on enhancing your online presence. We provide:
-        - Search Engine Optimization (SEO) to improve your website’s ranking on Google.
-        - Pay-Per-Click Advertising (PPC) to drive targeted traffic.
-        - Social Media Marketing to engage with your audience.
-        - Email Marketing campaigns to nurture leads.
-        - Content Marketing to establish your brand as an authority.
-        
-        The Challenge: The online landscape is competitive, and businesses struggle with low engagement and visibility. Our strategies ensure maximum ROI and measurable success.`,
+      description: "Boost your brand with expert SEO, PPC, and social media strategies to drive engagement and conversions.",
+      details: `Our digital marketing services include SEO, social media marketing, PPC campaigns, email marketing, and content strategy to ensure your business reaches the right audience at the right time. We use data-driven insights to maximize visibility and return on investment.`,
+      sections: [
+        {
+          "title": "Core Services",
+          "content": "Search Engine Optimization (SEO): Improve your search rankings and drive organic traffic.\nPay-Per-Click Advertising (PPC): Run targeted ad campaigns for instant results.\nSocial Media Marketing: Enhance brand awareness and engage with your audience.\nEmail Marketing: Convert leads into customers through strategic email campaigns.\nContent Marketing: Create valuable, engaging content to establish authority."
+        },
+        { title: "Challenges", content: "Many businesses struggle with brand visibility, audience engagement, and conversion rates in an increasingly competitive digital space." },
+        { title: "Our Approach", content: "We analyze industry trends, target audience behavior, and digital opportunities to create custom marketing strategies tailored to your business goals." },
+        { title: "Success Stories", content: "Our campaigns have resulted in a 300% increase in web traffic and significant revenue growth for our clients." },
+      ],
     },
     {
+      img: "services.jpg",
       name: "Mobile App Development",
       icon: "fa-mobile-alt",
-      description: "Develop high-quality iOS and Android apps tailored to your needs with user-friendly interfaces.",
-      details: `We specialize in developing robust mobile applications:
-        - iOS & Android App Development for scalable solutions.
-        - Cross-Platform Development to reduce costs and time-to-market.
-        - UI/UX Design for engaging and intuitive user experiences.
-        - App Maintenance & Support for continuous improvement.
-        - Performance Optimization for faster loading times and smooth experiences.
-        
-        The Challenge: Many apps fail due to poor usability and technical inefficiencies. We ensure your app is optimized, secure, and meets user expectations.`,
+      description: "Develop high-quality iOS and Android apps that provide seamless user experiences and meet business objectives.",
+      details: `From concept to deployment, we specialize in crafting innovative and feature-rich mobile applications. Our team ensures security, scalability, and performance for a smooth digital experience.`,
+      sections: [
+        { title: "Challenges", content: "Building an app that balances functionality, speed, and user engagement can be a daunting task." },
+        { title: "Our Approach", content: "We adopt agile methodologies, ensure user-friendly interfaces, and implement the latest technologies to create high-performance apps." },
+        { title: "Success Stories", content: "Our clients have seen increased customer engagement and revenue growth through feature-rich mobile apps." },
+      ],
     },
     {
+      img: "services.jpg",
       name: "Web Development",
       icon: "fa-code",
-      description: "Create stunning, responsive websites with cutting-edge technologies to grow your business online.",
-      details: `Our web development services help businesses establish a strong online presence:
-        - Custom Website Development to meet your specific needs.
-        - E-commerce Solutions for online stores.
-        - CMS Development (WordPress, Shopify) for easy content management.
-        - API Integration for seamless third-party service connections.
-        - Performance & Security Optimization to enhance site speed and safety.
-        
-        The Challenge: Websites must be responsive, secure, and user-friendly to attract and retain visitors. Our team ensures your website is functional, visually appealing, and optimized for success.`,
+      description: "Create stunning, responsive websites that enhance user engagement and business growth.",
+      details: `We design and develop visually appealing and highly functional websites tailored to meet business needs. Our expertise includes front-end and back-end development, CMS solutions, and e-commerce platforms.`,
+      sections: [
+        { title: "Challenges", content: "Businesses require websites that are visually engaging, fast, and optimized for conversions." },
+        { title: "Our Approach", content: "We leverage modern web technologies, responsive design principles, and performance optimization techniques to create exceptional websites." },
+        { title: "Success Stories", content: "Our websites have helped clients achieve higher customer retention rates and increased online sales." },
+      ],
     },
   ];
+
+  const selected = services.find((service) => service.name === selectedService);
 
   return (
     <>
       {/* Header Card */}
-      <div className="relative max-w-[95%] mx-auto ">
-        <div className="hidden md:block absolute top-2 left-0">
-          <img src="breadcrumb-shape.png" alt="Breadcrumb" />
-        </div>
-        <div className="hidden md:block absolute top-0 right-0">
-          <img src="breadcrumb-shape-2.png" alt="Breadcrumb" className="h-[350px]" />
-        </div>
-
+      <div className="relative max-w-[95%] mx-auto">
         <div className="text-black flex flex-col justify-center items-center mt-20 py-16 md:py-30 gap-5 rounded-2xl bg-[#f6f3fe] text-center">
           <h1 className="text-3xl md:text-5xl font-bold">Our Services</h1>
-          <div className="flex items-center border-2 border-[#BF20FC] rounded-full px-5 py-2 gap-3">
-            <Link to="/" className="text-sm md:text-base font-medium hover:text-[#C6F806]">
-              Home
-            </Link>
-            <span>
-              <i className="fa-solid fa-greater-than text-xs"></i>
-            </span>
+          <div className="flex items-center border-2 border-[#11778B] rounded-full px-5 py-2 gap-3">
+            <Link to="/" className="text-sm md:text-base font-medium hover:text-[#11778B]">Home</Link>
+            <span><i className="fa-solid fa-greater-than text-xs"></i></span>
             <p className="text-sm md:text-base">Services</p>
           </div>
         </div>
       </div>
 
       {/* Services Section */}
-      <div className="max-w-6xl mx-auto bg-white shadow-lg rounded-lg p-8 mt-10 flex flex-col md:flex-row gap-8">
+      <div className="max-w-6xl mx-auto shadow-lg rounded-lg p-8 mt-10 flex flex-col md:flex-row gap-8">
         {/* Left Sidebar - Services List */}
         <div className="w-full md:w-1/3 border-r p-6">
           <h2 className="text-2xl font-bold mb-4 text-gray-800">Our Services</h2>
@@ -81,17 +81,12 @@ export default function AllServicesComponent() {
               <li
                 key={service.name}
                 onClick={() => setSelectedService(service.name)}
-                className={`flex items-center gap-3 p-4 rounded-lg cursor-pointer transition ${
-                  selectedService === service.name
-                    ? "bg-purple-600 text-white"
+                className={`flex items-center gap-3 p-4 rounded-lg cursor-pointer transition ${selectedService === service.name
+                    ? "bg-[#C6F806] text-white"
                     : "bg-gray-100 hover:bg-purple-100"
-                }`}
-              >
-                <i
-                  className={`fa-solid ${service.icon} text-xl ${
-                    selectedService === service.name ? "text-white" : "text-purple-600"
                   }`}
-                ></i>
+              >
+                <i className={`fa-solid ${service.icon} text-xl ${selectedService === service.name ? "text-white" : "text-[#11778B]"}`}></i>
                 <span className="font-semibold">{service.name}</span>
               </li>
             ))}
@@ -100,13 +95,30 @@ export default function AllServicesComponent() {
 
         {/* Right Content - Service Details */}
         <div className="w-full md:w-2/3 p-6">
-          <h2 className="text-3xl font-bold text-purple-600">{selectedService}</h2>
-          <p className="mt-4 text-gray-700 text-lg">
-            {services.find((service) => service.name === selectedService)?.description}
-          </p>
-          <p className="mt-4 text-gray-700">
-            {services.find((service) => service.name === selectedService)?.details}
-          </p>
+          <img
+            src={selected.img}
+            alt={selectedService}
+            className="mx-auto mb-4 rounded-lg shadow-md"
+          />
+          <h2 className="text-3xl font-bold text-[#11778B]">{selectedService}</h2>
+          <p className="mt-4 text-gray-700 text-lg">{selected.description}</p>
+          <p className="mt-4 text-gray-700">{selected.details}</p>
+
+          {/* Expandable Sections */}
+          {selected.sections.map((section, index) => (
+            <div key={index} className="mt-6 border-t pt-4">
+              <button
+                className="flex justify-between w-full text-left text-xl font-semibold text-gray-800 hover:text-[#11778B] transition"
+                onClick={() => toggleExpand(section.title)}
+              >
+                {section.title}
+                <i className={`fa-solid fa-chevron-down transition-transform duration-300 ${expandedSections[section.title] ? "rotate-180" : ""}`}></i>
+              </button>
+              {expandedSections[section.title] && (
+                <p className="mt-2 text-gray-700">{section.content}</p>
+              )}
+            </div>
+          ))}
         </div>
       </div>
     </>
