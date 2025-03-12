@@ -2,6 +2,13 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 export default function WhyServiceUsComponent() {
+  const scrollToSection = (id) => {
+    const section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+  };
+
   return (
     <div className="max-w-[1344px] mx-auto pb-20">
       {/* Header Section */}
@@ -11,7 +18,7 @@ export default function WhyServiceUsComponent() {
           Innovative <span className="text-[#11778B] font-bold">Tech Solutions</span> for Your Business
         </p>
         <div className="flex w-full mt-4 md:mt-0 justify-start md:justify-end">
-          <Link to="/contact">
+          <Link onClick={() => scrollToSection("contact")}>
           <div className='group text-white'>
           <button className="bg-[#11778B] z-10 cursor-pointer  font-medium px-4 py-2 rounded-full transition duration-300 ">
             Contact Us

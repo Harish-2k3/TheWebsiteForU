@@ -1,9 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-export default function ProjectsComponent() {
+export default function OurServicesComponent() {
   return (
-    <div className="max-w-[1344px] mx-auto py-20 px-5">
+    <div className="max-w-[1344px] mx-auto py-20">
       <h1 className="font-medium text-[20px] pb-3">OUR SERVICES</h1>
       <p className="text-5xl font-medium">
         Our social media Services

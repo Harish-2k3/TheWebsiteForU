@@ -1,23 +1,47 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 
 
 
 export default function Contactus() {
     const location = useLocation();
+    const [selectedService, setSelectedService] = useState("");
+    const [isOpen, setIsOpen] = useState(false);
+    const dropdownRef = useRef(null);
+
+
+    const services = [
+        "Digital Marketing",
+        "Mobile App Development",
+        "Website Development",
+        "Others",
+    ];
+
+    // Close dropdown when clicking outside
+    useEffect(() => {
+        const handleClickOutside = (event) => {
+            if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
+                setIsOpen(false);
+            }
+        };
+
+        document.addEventListener("mousedown", handleClickOutside);
+        return () => document.removeEventListener("mousedown", handleClickOutside);
+    }, []);
+
 
     return (
         <>
             {location.pathname === '/contact' && (
-                <div className="relative max-w-[1344px] mx-auto mt-35">
-                    <div className="hidden md:block absolute top-2 left-0">
-                        <img src="breadcrumb-shape.png" alt="Breadcrumb" />
+                <div className="relative mx-auto mt-26">
+                    <div className="hidden md:block absolute top-15 left-0">
+                        <img src="breadcrumb-shape.png" alt="Breadcrumb" className='h-[200px]' />
                     </div>
-                    <div className="hidden md:block absolute top-0 right-0">
-                        <img src="breadcrumb-shape-2.png" alt="Breadcrumb" className='h-[350px]' />
+                    <div className="hidden md:block absolute top-10 right-0">
+                        <img src="breadcrumb-shape-2.png" alt="Breadcrumb" className='h-[250px]' />
                     </div>
 
-                    <div className="text-black flex flex-col justify-center items-center mt-20 py-16 md:py-30 gap-5 rounded-2xl bg-[#f6f3fe] text-center">
+                    <div className="text-black flex flex-col justify-center items-center mt-20 py-16 md:py-25 gap-5 rounded-2xl bg-[#f6f3fe] text-center">
                         <h1 className="text-3xl md:text-5xl font-bold">Contact Us</h1>
                         <div className="flex items-center border-2 border-[#11778B] rounded-full px-5 py-2 gap-3">
                             <Link to="/" className="text-sm md:text-base font-medium hover:text-[#C6F806]">
@@ -58,12 +82,12 @@ export default function Contactus() {
                     ))}
                 </div>
             )}
-{location.pathname === '/' && (
-            <div className='flex flex-col max-w-[1344px] mx-auto'>
-            <h1 className='font-medium text-[20px] pb-3'>CONTACT US</h1>
-            <p className='text-5xl font-bold pb-10'>How can we help you today?</p>
-            </div>
-)}
+            {location.pathname === '/' && (
+                <div className='flex flex-col max-w-[1344px] mx-auto' id="contact">
+                    <h1 className='font-medium text-[20px] pb-3'>CONTACT US</h1>
+                    <p className='text-5xl font-bold '>How can we help you today?</p>
+                </div>
+            )}
 
             <div className="py-10 grid grid-cols-1 lg:grid-cols-2 max-w-[1344px] mx-auto gap-10  lg:gap-10">
                 {/* Google Map */}
@@ -77,7 +101,7 @@ export default function Contactus() {
                 </div>
 
                 <div className="flex flex-col gap-5">
-                    <p className='text-3xl font-bold'>Get In Touch</p>
+                    <p className='text-3xl font-bold'>GET IN TOUCH</p>
 
                     {/* Name & Email Side by Side */}
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
@@ -114,12 +138,62 @@ export default function Contactus() {
                         </div>
                     </div>
 
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+                        <div className="relative">
+                            <input
+                                type="text"
+                                id="mobno"
+                                placeholder=" "
+                                className="border border-gray-300 rounded-lg p-3 w-full peer focus:border-[#11778B] focus:ring-1 focus:ring-[#11778B] focus:outline-none"
+                            />
+                            <label
+                                htmlFor="name"
+                                className="absolute left-3 top-3 text-gray-500 text-sm bg-white px-1 transition-all peer-placeholder-shown:top-3 peer-placeholder-shown:text-gray-400 peer-placeholder-shown:text-base peer-focus:top-[-8px] peer-focus:text-xs peer-focus:text-black"
+                            >
+                                Mobile Number
+                            </label>
+                        </div>
+
+                        <div className="relative w-full" ref={dropdownRef}>
+                            {/* Input Field with Dropdown Icon */}
+                            <div
+                                className="border border-gray-300 rounded-lg p-3 w-full flex items-center justify-between cursor-pointer focus-within:border-[#11778B] focus-within:ring-1 focus-within:ring-[#11778B]"
+                                onClick={() => setIsOpen(!isOpen)}
+                            >
+                                <span className={`text-gray-700 ${selectedService ? "text-black" : "text-gray-400"}`}>
+                                    {selectedService || "Select a Service"}
+                                </span>
+                                <i className={`fa-solid fa-caret-down transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`}></i>
+                            </div>
+
+                            {/* Dropdown Menu */}
+                            {isOpen && (
+                                <ul className="absolute left-0 w-full bg-white border border-gray-300 rounded-lg mt-1 shadow-md z-10">
+                                    {services.map((service, index) => (
+                                        <li
+                                            key={index}
+                                            className="p-3 hover:bg-gray-100 cursor-pointer text-gray-700"
+                                            onClick={() => {
+                                                setSelectedService(service);
+                                                setIsOpen(false);
+                                            }}
+                                        >
+                                            {service}
+                                        </li>
+                                    ))}
+                                </ul>
+                            )}
+                        </div>
+                    </div>
+
+
+
                     {/* Message Field */}
                     <div className="relative">
                         <textarea
                             id="message"
                             placeholder=" "
-                            rows="4"
+                            rows="3"
                             className="border border-gray-300 rounded-lg p-3 w-full peer focus:border-[#11778B] focus:ring-1 focus:ring-[#11778B] focus:outline-none"
                         ></textarea>
                         <label
@@ -132,9 +206,9 @@ export default function Contactus() {
 
                     {/* Submit Button */}
                     <div className='flex justify-center  md:justify-normal'>
-                    <button className="bg-[#11778B] cursor-pointer text-white py-3 rounded-lg text-lg px-3 font-semibold hover:bg-[#11778bda] transition">
-                        Send Message
-                    </button>
+                        <button className="bg-[#11778B] cursor-pointer text-white py-3 rounded-lg text-lg px-3 font-semibold hover:bg-[#11778bda] transition">
+                            Send Message
+                        </button>
                     </div>
                 </div>
 

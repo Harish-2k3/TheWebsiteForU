@@ -23,15 +23,15 @@ export default function Home() {
 
   return (
     <div className=''>
-      <HomeComponent />
-      <AboutCompany />
-      <OurServicesComponent />
+      <HomeComponent id="home"/>
+      <AboutCompany id="about"/>
+      <OurServicesComponent id="services"/>
       <WhyServiceUsComponent />
       <CollabrationComponent />
-      <ProjectsComponent />
+      {/* <ProjectsComponent id="project"/> */}
       <TestimonialComponent />
-      <div className='pb-20 bg-cover bg-no-repeat' style={{ backgroundImage: "url('ContactBG.png')" }}>
-      <Contactus />
+      <div className='py-20 bg-right bg-no-repeat' style={{ backgroundImage: "url('ContactBG.png')" }}>
+      <Contactus id="contact"/>
       </div>
       {/* Scroll-to-Top Button */}
       {showButton && (

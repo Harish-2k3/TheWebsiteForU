@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import Contactus from "../../../Contact/Contactus";
 
 export default function AllServicesComponent() {
   const [selectedService, setSelectedService] = useState("Digital Marketing");
@@ -60,7 +61,7 @@ export default function AllServicesComponent() {
   return (
     <>
       {/* Header Card */}
-      <div className="relative max-w-[95%] mx-auto">
+      <div className="relative mx-auto">
         <div className="text-black flex flex-col justify-center items-center mt-20 py-16 md:py-30 gap-5 rounded-2xl bg-[#f6f3fe] text-center">
           <h1 className="text-3xl md:text-5xl font-bold">Our Services</h1>
           <div className="flex items-center border-2 border-[#11778B] rounded-full px-5 py-2 gap-3">
@@ -72,7 +73,7 @@ export default function AllServicesComponent() {
       </div>
 
       {/* Services Section */}
-      <div className="max-w-6xl mx-auto shadow-lg rounded-lg p-8 mt-10 flex flex-col md:flex-row gap-8">
+      <div className="max-w-[1344px] mx-auto rounded-lg p-8 mt-10 flex flex-col md:flex-row">
         {/* Left Sidebar - Services List */}
         <div className="w-full md:w-1/3 border-r p-6">
           <h2 className="text-2xl font-bold mb-4 text-gray-800">Our Services</h2>
@@ -82,7 +83,7 @@ export default function AllServicesComponent() {
                 key={service.name}
                 onClick={() => setSelectedService(service.name)}
                 className={`flex items-center gap-3 p-4 rounded-lg cursor-pointer transition ${selectedService === service.name
-                    ? "bg-[#C6F806] text-white"
+                    ? "bg-[#11778B] text-white"
                     : "bg-gray-100 hover:bg-purple-100"
                   }`}
               >
@@ -121,6 +122,8 @@ export default function AllServicesComponent() {
           ))}
         </div>
       </div>
+
+      
     </>
   );
 }

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 export default function ProjectsComponent() {
   return (
-    <div className="max-w-[1344px] mx-auto pb-20 px-5">
+    <div className="max-w-[1344px] mx-auto py-20 px-5" id="project">
       <h1 className="font-medium text-[20px] pb-3">OUR PROJECTS</h1>
       <p className="text-5xl">
         Explore our new recently {" "}

@@ -42,7 +42,7 @@ export default function TestimonialComponent() {
     }, []);
 
     return (
-        <div className="max-w-[1344px] mx-auto pb-20">
+        <div className="max-w-[1344px] mx-auto py-20">
             <h1 className="font-medium text-[20px] pb-3">TESTIMONIALS</h1>
             <div className="flex flex-col md:flex-row justify-between items-start md:items-center">
                 <h1 className="font-bold text-4xl md:text-5xl md:w-6/12">

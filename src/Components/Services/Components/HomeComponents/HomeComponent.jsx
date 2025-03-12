@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function HomeComponent() {
   return (
-    <div className="bg-center relative pt-25 bg-gradient-to-b from-[#11778B] to-[#0A1F44] overflow-hidden">
+    <div className="bg-center relative pt-25 bg-gradient-to-b from-[#11778B] to-[#0A1F44] overflow-hidden" id='home'>
       {/* Floating Images */}
       <div className='absolute top-[50vh] md:top-[35vh] lg:top-[30vh] left-3 lg:left-7 bounce-x'>
         <img src="mike-shape.png" alt="loading..." />

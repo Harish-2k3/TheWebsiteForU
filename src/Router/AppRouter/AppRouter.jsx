@@ -5,11 +5,13 @@ import Home from '../../Components/Home/Home'
 import Contactus from '../../Components/Contact/Contactus'
 import AllServicesComponent from '../../Components/Services/Components/Services/AllServicesComponent'
 import AboutCompany from '../../Components/Home/AboutCompany'
+import ScrollToTop from '../ScrollToTop/ScrollToTop'
 
 export default function AppRouter() {
   return (
     <div>
         <BrowserRouter>
+        <ScrollToTop />
         <Routes>
             <Route element={<Main/>}>
             <Route path="/" element={<Home/>}/>
