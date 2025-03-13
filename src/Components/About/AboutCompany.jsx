@@ -1,5 +1,5 @@
 import React from 'react'
-import AboutCompanyComponent from '../Services/Components/HomeComponents/AboutCompanyComponent'
+import AboutCompanyComponent from '../../services/Components/AboutComponent/AboutCompanyComponent'
 
 export default function AboutCompany() {
   return (

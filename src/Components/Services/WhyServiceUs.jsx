@@ -1,5 +1,5 @@
 import React from 'react'
-import WhyServiceUsComponent from '../Services/Components/HomeComponents/WhyServiceUsComponent'
+import WhyServiceUsComponent from '../../services/Components/ServicesComponents/WhyServiceUsComponent'
 
 export default function WhyServiceUs() {
   return (

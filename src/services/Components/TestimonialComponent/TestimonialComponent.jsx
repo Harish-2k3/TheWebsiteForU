@@ -3,33 +3,34 @@ import React, { useState, useEffect } from "react";
 const testimonials = [
     {
         id: 1,
-        name: "Courtney Henry",
-        role: "Nursing Assistant",
-        image: "T1.png",
-        review: "Consectetur adipiscing elit. Integer nunc viverra laoreet est the is porta pretium metus aliquam eget maecenas porta is nunc viverra Aenean",
+        name: "Michael Johnson",
+        role: "CEO, TechNova Solutions",
+        image: "T5.png",
+        review: "The team at theWebsiteForU transformed our online presence with their digital marketing expertise. Our traffic and leads have skyrocketed since we partnered with them!",
     },
     {
         id: 2,
-        name: "Esther Howard",
-        role: "Nursing Assistant",
-        image: "T1.png",
-        review: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nunc viverra laoreet est porta pretium metus aliquam.",
+        name: "Sophia Martinez",
+        role: "Founder, TrendyApp",
+        image: "T2.jpg",
+        review: "Their mobile app development team exceeded our expectations. The app is smooth, user-friendly, and perfectly aligned with our vision. Highly recommend their services!",
     },
     {
         id: 3,
-        name: "Jane Cooper",
-        role: "Doctor",
-        image: "T1.png",
-        review: "Maecenas porta nunc viverra laoreet. Integer nunc viverra laoreet est the is porta pretium metus aliquam.",
+        name: "David Thompson",
+        role: "Marketing Director, E-Commerce Hub",
+        image: "T3.jpg",
+        review: "Exceptional SEO and PPC campaigns! Our website now ranks on the first page of Google, and our conversion rates have improved dramatically.",
     },
     {
         id: 4,
-        name: "Robert Fox",
-        role: "Pharmacist",
-        image: "T1.png",
-        review: "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae.",
+        name: "Emma Wilson",
+        role: "Operations Manager, NextGen Startups",
+        image: "T4.png",
+        review: "From branding to a fully functional website, theWebsiteForU handled everything flawlessly. Their attention to detail and creativity are top-notch!",
     },
 ];
+
 
 export default function TestimonialComponent() {
     const [activeIndex, setActiveIndex] = useState(0);

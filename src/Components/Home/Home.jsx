@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
-import HomeComponent from '../Services/Components/HomeComponents/HomeComponent';
-import AboutCompany from './AboutCompany';
-import OurServicesComponent from '../Services/Components/HomeComponents/OurServicesComponent';
-import WhyServiceUsComponent from '../Services/Components/HomeComponents/WhyServiceUsComponent';
-import CollabrationComponent from '../Services/Components/HomeComponents/CollabrationComponent';
-import ProjectsComponent from '../Services/Components/HomeComponents/ProjectsComponent';
-import TestimonialComponent from '../Services/Components/HomeComponents/TestimonialComponent';
+import HomeComponent from '../../services/Components/HomeComponents/HomeComponent';
+import AboutCompany from '../About/AboutCompany';
+import OurServices from '../Services/OurServices';
+import WhyServiceUs from '../Services/WhyServiceUs';
+import Collabration from '../Contact/Collabration';
+import Testimonial from '../Testimonial/Testimonial';
 import Contactus from '../Contact/Contactus';
+
 
 export default function Home() {
   const [showButton, setShowButton] = useState(false);
@@ -25,14 +25,12 @@ export default function Home() {
     <div className=''>
       <HomeComponent id="home"/>
       <AboutCompany id="about"/>
-      <OurServicesComponent id="services"/>
-      <WhyServiceUsComponent />
-      <CollabrationComponent />
+      <OurServices id="services"/>
+      <WhyServiceUs />
+      <Collabration />
       {/* <ProjectsComponent id="project"/> */}
-      <TestimonialComponent />
-      <div className='py-20 bg-right bg-no-repeat' style={{ backgroundImage: "url('ContactBG.png')" }}>
+      <Testimonial />
       <Contactus id="contact"/>
-      </div>
       {/* Scroll-to-Top Button */}
       {showButton && (
         <button
