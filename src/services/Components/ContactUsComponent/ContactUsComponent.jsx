@@ -84,12 +84,12 @@ export default function ContactUsComponent() {
                 </div>
             )}
             {location.pathname === '/' && (
-                <div className='flex flex-col max-w-[1344px] mx-auto' id="contact">
+                <div className='flex flex-col max-w-[1344px] px-5 md:px-10 2xl:px-0 mx-auto pt-20' id="contact">
                     <h1 className='font-medium text-[20px] pb-3'>CONTACT US</h1>
                     <p className='text-5xl font-bold '>How can we help you today?</p>
                 </div>
             )}
-            <div className={`mx-auto ${isContactPage ? "max-w-[1200px]" : "max-w-full"}`}>
+            <div className={`mx-auto px-5 md:px-10 2xl:px-0 ${isContactPage ? "max-w-[1200px]" : "max-w-full"}`}>
                 <div className="py-10 grid grid-cols-1 lg:grid-cols-2 max-w-[1344px] mx-auto">
                     {/* Google Map */}
                     {/* <div className="w-full h-64 md:h-96 ">
@@ -131,7 +131,7 @@ export default function ContactUsComponent() {
                     </div>
 
 
-                    <div className="flex flex-col gap-5">
+                    <div className="flex flex-col gap-5 pt-10 lg:pt-0">
                         <p className='text-5xl'>Let's get started!</p>
 
                         {/* Name & Email Side by Side */}

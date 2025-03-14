@@ -25,7 +25,7 @@ export default function Header() {
 
   useEffect(() => {
     const handleClickOutside = (event) => {
-      if (navRef.current && !navRef.current.contains(event.target)) {
+      if (navRef.current && !navRef.current.contains(event.target) && !event.target.closest('.menu-btn')) {
         setIsOpen(false);
       }
     };
@@ -38,6 +38,7 @@ export default function Header() {
     const section = document.getElementById(id);
     if (section) {
       section.scrollIntoView({ behavior: "smooth", block: "start" });
+      setIsOpen(false);
     }
   };
 
@@ -48,20 +49,28 @@ export default function Header() {
       className={`fixed w-full z-[999] top-0 py-3 left-0 right-0 transition-all duration-300 ${isVisible ? "translate-y-0" : "-translate-y-full"
         } ${isScrolled || !isHomePage ? "bg-[#11778B]" : "bg-transparent"}`}
     >
-      <div className="flex justify-between items-center max-w-[1440px] mx-auto">
+      <div className="flex justify-between items-center px-3 lg:px-10 max-w-[95rem] 3xl:px-0 mx-auto ">
         <div className="cursor-pointer">
           <Link to="/">
-            <img src="lllArtboard 7.png" alt="Logo" className="h-20 w-70 md:w-full" />
+            <img src="lllArtboard 7.png" alt="Logo" className="w-60 md:w-80" />
           </Link>
         </div>
 
-        <div className="lg:hidden cursor-pointer" onClick={() => setIsOpen(!isOpen)}>
-          <i className="fa-solid fa-bars text-white text-2xl"></i>
+        <div className="lg:hidden menu-btn flex flex-row items-center gap-2" onClick={() => setIsOpen(!isOpen)}>
+          <i className="fa-solid fa-bars text-white text-2xl cursor-pointer"></i>
+          <Link to="tel:+1234567890" className="">
+          <div className="relative group w-10 h-10">
+              {/* Default Icon */}
+              <i className="fa-solid fa-phone text-[17px] text-black bg-[#C6F806] p-3 rounded-full cursor-pointer transition duration-300 group-hover:opacity-0 absolute inset-0 flex items-center justify-center"></i>
+              {/* Hover Icon (appears on hover) */}
+              <i className="fa-solid fa-phone-volume text-black text-[17px] bg-[#C6F806] p-3 rounded-full cursor-pointer transition duration-300 opacity-0 group-hover:opacity-100 absolute inset-0 flex items-center justify-center"></i>
+            </div>
+            </Link>
         </div>
 
         <nav
           ref={navRef}
-          className={`lg:flex items-center absolute gap-10 flex-col lg:flex-row lg:static top-[100px] w-full lg:w-auto right-0 bg-black lg:bg-transparent py-5 lg:py-0 transition-all duration-300 shadow-lg lg:shadow-none z-50 lg:text-[18px] ${isOpen ? "flex" : "hidden"
+          className={`lg:flex items-center absolute gap-5 md:gap-8 flex-col lg:flex-row lg:static top-[70px] md:top-[90px] w-full lg:w-auto right-0 bg-black lg:bg-transparent py-5 lg:py-0 transition-all duration-300 shadow-lg lg:shadow-none z-50 lg:text-[18px] ${isOpen ? "flex" : "hidden"
             }`}
         >
           <Link
@@ -108,21 +117,33 @@ export default function Header() {
           >
             Contact Us
           </Link>
+
+          {/* <Link to="tel:+1234567890" className="lg:hidden bg-white px-3 py-2 rounded-xl">
+            <div className="flex items-center group gap-2">
+              <div className="relative w-6 h-6 flex items-center text-black justify-center group-hover:text-[#11778B]">
+                <i className="fa-solid fa-phone cursor-pointer transition duration-100 group-hover:opacity-0 "></i>
+                <i className="fa-solid fa-phone-volume cursor-pointer transition duration-100 opacity-0 group-hover:opacity-100 absolute "></i>
+              </div>
+              <button className="text-black cursor-pointer font-bold group-hover:text-[#11778B]">
+                Get help!
+              </button>
+            </div>
+          </Link> */}
         </nav>
 
-        <Link to="tel:+1234567890" className="hidden lg:flex">
-          <div className="flex items-center group relative">
+        <Link to="tel:+1234567890" className="hidden cursor-pointer lg:flex">
+          <div className="flex items-center group relative ">
 
             {/* Phone Number Button */}
-            <button className="bg-[#C6F806] cursor-pointer text-black font-medium px-4 py-2 rounded-full transition duration-300">
+            <button className="bg-[#C6F806] cursor-pointer text-black font-medium px-4 py-2 rounded-full transition duration-300 hidden lg:block">
               +1234567890
             </button>
             {/* Phone Icon with Hover Effect */}
             <div className="relative w-10 h-10">
               {/* Default Icon */}
-              <i className="fa-solid fa-phone text-[17px] text-black bg-[#C6F806] p-3 rounded-full cursor-pointer transition duration-300 group-hover:opacity-0 absolute inset-0 flex items-center justify-center"></i>
+              <i className="fa-solid fa-phone text-[17px] text-black bg-[#C6F806] p-3 rounded-full  transition duration-300 group-hover:opacity-0 absolute inset-0 flex items-center justify-center"></i>
               {/* Hover Icon (appears on hover) */}
-              <i className="fa-solid fa-phone-volume text-black text-[17px] bg-[#C6F806] p-3 rounded-full cursor-pointer transition duration-300 opacity-0 group-hover:opacity-100 absolute inset-0 flex items-center justify-center"></i>
+              <i className="fa-solid fa-phone-volume text-black text-[17px] bg-[#C6F806] p-3 rounded-full  transition duration-300 opacity-0 group-hover:opacity-100 absolute inset-0 flex items-center justify-center"></i>
             </div>
           </div>
         </Link>

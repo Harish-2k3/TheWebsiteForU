@@ -10,17 +10,17 @@ export default function HomeComponent() {
       <div className='absolute top-[25vh] md:top-[23vh] lg:top-[20vh] lg:right-20 right-5 md:right-10 bounce-y'>
         <img src="energy-shape.png" alt="loading..." />
       </div>
-      <div className='absolute  z-10 bottom-0 right-0  bounce-y'>
+      <div className='absolute bottom-0 right-0  bounce-y'>
         <img src="rocket.png" alt="loading..." />
       </div>
 
       {/* Hero Text Image */}
-      <div className='flex items-center justify-center py-20 '>
-        <img src="hero-text.png" alt="loading" className='z-10' />
+      <div className='flex items-center justify-center py-20 z-20'>
+        <img src="hero-text.png" alt="loading" className='z-20 px-5 md:px-10 lg:px-0' />
       </div>
 
       {/* Main Content with Fixed Max Width */}
-      <div className='max-w-[1440px] mx-auto h-full py-auto grid grid-cols-1 lg:flex lg:flex-row justify-between items-center gap-5'>
+      <div className='max-w-[1440px] px-5 md:px-10 2xl:px-0 mx-auto h-full py-auto grid grid-cols-1 lg:flex lg:flex-row justify-between items-center gap-5'>
         
         {/* Left Content */}
         <div className='text-white flex flex-col gap-5 w-full lg:w-3/12 max-w-[1024px]'>
@@ -33,12 +33,12 @@ export default function HomeComponent() {
         </div>
 
         {/* Center Image */}
-        <div className="h-full w-full lg:w-6/12 flex  justify-center items-center max-w-[1024px]">
-          <img src="hero-image (1).png" alt="loading..." className="max-h-[70vh]  object-contain" />
+        <div className="h-full w-full lg:w-6/12 flex py-10 lg:py-0 justify-center items-center max-w-[1024px]">
+          <img src="hero-image (1).png" alt="loading..." className="max-h-[70vh] object-contain " />
         </div>
 
         {/* Right Content */}
-        <div className='text-white relative lg:w-3/12 flex flex-col items-center max-w-[1024px]'>
+        <div className='text-white relative py-10 lg:py-0 lg:w-3/12 flex flex-col items-center max-w-[1024px]'>
           {/* Text Content */}
           <p className="italic w-60 text-center text-lg lg:text-left mt-4 z-10">
             <span className="block">Boost Your Online Presence</span>

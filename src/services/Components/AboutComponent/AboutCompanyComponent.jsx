@@ -10,7 +10,7 @@ export default function AboutCompanyComponent() {
     }
   };
   return (
-    <div className="relative max-w-[1344px] mx-auto py-20 " id="about">
+    <div className="relative px-5 md:px-10 2xl:px-0 max-w-[1344px] mx-auto pt-20 " id="about">
       {/* About Us Section */}
       <div className="flex flex-col lg:flex-row gap-10 lg:gap-10 relative z-10 ">
         {/* Image Section */}
@@ -27,16 +27,16 @@ export default function AboutCompanyComponent() {
         {/* Text Content */}
         <div className="w-full lg:w-1/2 text-left">
           <h1 className="font-medium text-xl text-black py-3">ABOUT US</h1>
-          <p className="text-4xl md:text-5xl font-semibold ">
+          <p className="text-3xl md:text-5xl font-semibold ">
             Transforming Brands with{' '}
           </p>
           <p className='text-4xl md:text-5xl pt-2'><span className="text-[#11778B] font-bold">Digital Excellence</span></p>
-          <p className="text-lg md:text-xl my-5 text-justify ">
+          <p className="text-lg md:text-xl my-5 xl:my-0 2xl:py-7 pt-5 pb-2 text-justify ">
             At TheWebsiteforU, we specialize in transforming brands with cutting-edge digital solutions. From powerful social media strategies to high-performance web and mobile app development, we help businesses thrive in the digital world. Our expert team combines creativity, technology, and data-driven insights to deliver impactful results. Whether you're looking to enhance your online presence or build a seamless digital experience, we’ve got you covered. Let’s create something extraordinary and take your brand to new heights!
           </p>
 
           {/* Button Section */}
-          <div className="flex lg:items-start items-center w-auto">
+          <div className="flex lg:items-start items-center w-auto pb-5 lg:pb-0">
             <div className='group'>
               <button onClick={() => scrollToSection("contact")} className="bg-[#11778B] text-white cursor-pointer z-10 font-bold px-4 py-3 rounded-full transition duration-300 group ">
                 Know More
@@ -48,25 +48,25 @@ export default function AboutCompanyComponent() {
       </div>
 
       {/* Features Section - Full Width & Absolute Right */}
-      <div className="absolute left-1/3 bottom-15 z-10 bg-black/40 backdrop-blur-lg border border-white/20 shadow-xl p-10 rounded-2xl">
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-10 border-white/20">
+      <div className="lg:absolute lg:left-1/3 lg:bottom-5 z-10 bg-black/40 backdrop-blur-lg border border-white/20 shadow-xl p-3 lg:p-7 rounded-2xl">
+        <div className="lg:grid lg:grid-cols-3 flex flex-row lg:gap-10 border-white/20">
 
           {/* Digital Marketing Service */}
-          <div className="flex flex-col  gap-4 px-6 border-r border-white/20 last:border-none">
-            <i className="fa-solid fa-chart-line text-[#C6F806] text-6xl drop-shadow-lg"></i>
-            <p className="font-semibold text-2xl text-white ">Result-Driven Digital Marketing</p>
+          <div className="flex flex-col gap-4 px-6 border-r border-white/20 last:border-none">
+            <i className="fa-solid fa-chart-line text-[#C6F806] text-4xl drop-shadow-lg"></i>
+            <p className="font-semibold lg:text-lg text-[15px] text-white ">Result-Driven Digital Marketing</p>
           </div>
 
           {/* Web Development Service */}
-          <div className="flex flex-col  gap-4 px-6 border-r border-white/20 last:border-none">
-            <i className="fa-solid fa-code text-[#C6F806] text-6xl drop-shadow-lg"></i>
-            <p className="font-semibold text-2xl text-white">Custom Web Development</p>
+          <div className="flex flex-col gap-4 px-6 border-r border-white/20 last:border-none">
+            <i className="fa-solid fa-code text-[#C6F806] text-4xl drop-shadow-lg"></i>
+            <p className="font-semibold lg:text-lg text-[15px] text-white">Custom Web Development</p>
           </div>
 
           {/* Mobile App Solutions */}
           <div className="flex flex-col  gap-4 px-6">
-            <i className="fa-solid fa-mobile-screen-button text-[#C6F806] text-6xl drop-shadow-lg"></i>
-            <p className="font-semibold text-2xl text-white">Innovative Mobile App Solutions</p>
+            <i className="fa-solid fa-mobile-screen-button text-[#C6F806] text-4xl drop-shadow-lg"></i>
+            <p className="font-semibold lg:text-lg text-[15px] text-white">Innovative Mobile App Solutions</p>
           </div>
 
         </div>

@@ -10,11 +10,11 @@ export default function WhyServiceUsComponent() {
   };
 
   return (
-    <div className="max-w-[1344px] mx-auto pb-20">
+    <div className="max-w-[1344px] px-5 md:px-10 2xl:px-0 mx-auto pt-20">
       {/* Header Section */}
       <h1 className="font-medium text-[20px] pb-3 ">WHY CHOOSE US</h1>
       <div className="flex flex-col md:flex-row justify-between items-center pb-10 text-center md:text-left">
-        <p className="text-5xl text-left w-full">
+        <p className="text-3xl md:text-5xl text-left w-full">
           Innovative <span className="text-[#11778B] font-bold">Tech Solutions</span> for Your Business
         </p>
         <div className="flex w-full mt-4 md:mt-0 justify-start md:justify-end">
@@ -31,7 +31,7 @@ export default function WhyServiceUsComponent() {
       <hr />
 
       {/* Why Choose Us Details */}
-      <div className="flex flex-col lg:flex-row items-center justify-between gap-20 lg:py-20 2xl:py-40 py-10">
+      <div className="flex flex-col lg:flex-row items-center justify-between gap-20 lg:pt-10 2xl:py-40 py-10">
         {/* Left Side Content */}
         <div className="flex flex-col gap-5 lg:gap-30 text-left w-full lg:w-3/12">
           <div>
@@ -58,7 +58,7 @@ export default function WhyServiceUsComponent() {
           <img 
             src="why-choose-circle.png" 
             alt="Decorative Circle" 
-            className="absolute top-14/12 left-10/12 md:top-18/15 md:left-8/10 xl:top-[500px] xl:left-12/12 transform -translate-x-1/2 -translate-y-1/2 w-2/3 md:w-6/10 lg:w-10/10 xl:w-full rotate-circle"
+            className="absolute top-15/12 left-10/12 md:top-18/15 md:left-8/10 xl:top-[450px] xl:left-12/12 2xl:top-[500px] transform -translate-x-1/2 -translate-y-1/2 w-2/3 md:w-6/10 lg:w-10/10 xl:w-full rotate-circle"
           />
         </div>
 

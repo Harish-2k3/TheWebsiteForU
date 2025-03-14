@@ -26,11 +26,11 @@ export default function OurServicesComponent() {
   ];
 
   return (
-    <div className="max-w-[1344px] mx-auto py-20" id="services">
+    <div className="max-w-[1344px] px-5 md:px-10 2xl:px-0 mx-auto pt-20" id="services">
       <h1 className="font-medium text-[20px] pb-3">OUR SERVICES</h1>
-      <p className="text-5xl font-medium">Our social media Services</p>
+      <p className="text-3xl md:text-5xl font-medium">Our social media Services</p>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 py-10">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 pt-10">
         {services.map((service, index) => (
           <div key={index} className="relative group overflow-hidden rounded-lg shadow-lg">
             <img
