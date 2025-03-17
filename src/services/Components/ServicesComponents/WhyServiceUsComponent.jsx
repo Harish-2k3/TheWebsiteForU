@@ -10,20 +10,20 @@ export default function WhyServiceUsComponent() {
   };
 
   return (
-    <div className="max-w-[1344px] px-5 md:px-10 2xl:px-0 mx-auto pt-20">
+    <div className="max-w-[1344px] px-5 md:px-10 2xl:px-0 mx-auto pt-20 ">
       {/* Header Section */}
       <h1 className="font-medium text-[20px] pb-3 ">WHY CHOOSE US</h1>
-      <div className="flex flex-col md:flex-row justify-between items-center pb-10 text-center md:text-left">
-        <p className="text-3xl md:text-5xl text-left w-full">
+      <div className="flex flex-col md:flex-row justify-between items-center mb-10 text-center md:text-left">
+        <p className="text-3xl md:text-5xl text-left w-full pb-5 md:pb-0">
           Innovative <span className="text-[#11778B] font-bold">Tech Solutions</span> for Your Business
         </p>
-        <div className="flex w-full mt-4 md:mt-0 justify-start md:justify-end">
+        <div className="flex w-full justify-start md:justify-end">
           <Link onClick={() => scrollToSection("contact")}>
           <div className='group text-white'>
           <button className="bg-[#11778B] z-10 cursor-pointer  font-medium px-4 py-2 rounded-full transition duration-300 ">
             Contact Us
           </button>
-          <i className="fa-solid fa-right-long z-10 -rotate-45 easy-in-out  group-hover:rotate-0 bg-[#11778B] p-3 rounded-full cursor-pointer transition duration-300"></i>
+          <i className="fa-solid fa-right-long z-10 -rotate-45 easy-in-out group-hover:rotate-0 bg-[#11778B] p-3 rounded-full cursor-pointer transition duration-300"></i>
           </div>
           </Link>
         </div>
@@ -31,9 +31,9 @@ export default function WhyServiceUsComponent() {
       <hr />
 
       {/* Why Choose Us Details */}
-      <div className="flex flex-col lg:flex-row items-center justify-between gap-20 lg:pt-10 2xl:py-40 py-10">
+      <div className="flex flex-col lg:flex-row gap-20 my-10">
         {/* Left Side Content */}
-        <div className="flex flex-col gap-5 lg:gap-30 text-left w-full lg:w-3/12">
+        <div className="flex flex-col gap-5 lg:gap-30 t w-full lg:w-3/12 text-justify">
           <div>
             <h1 className="text-2xl font-bold pb-3">Custom Web & Mobile Apps</h1>
             <p className=" text-lg">
@@ -49,21 +49,21 @@ export default function WhyServiceUsComponent() {
         </div>
 
         {/* Center Image */}
-        <div className="relative flex items-center justify-center w-full lg:w-6/12">
+        <div className="relative flex items-center justify-center w-full md:my-20">
           <img 
             src="why-choose-img.png" 
             alt="Why Choose Us" 
-            className="object-contain w-4/10 lg:w-9/12 xl:w-7/12"
+            className="object-contain h-[250px] md:h-[300px]"
           />
           <img 
             src="why-choose-circle.png" 
             alt="Decorative Circle" 
-            className="absolute top-15/12 left-10/12 md:top-18/15 md:left-8/10 xl:top-[450px] xl:left-12/12 2xl:top-[500px] transform -translate-x-1/2 -translate-y-1/2 w-2/3 md:w-6/10 lg:w-10/10 xl:w-full rotate-circle"
+            className="absolute top-1/2 left-1/2 rotate-circle md:h-[500px]"
           />
         </div>
 
         {/* Right Side Content */}
-        <div className="flex flex-col gap-5 lg:gap-30 text-left w-full lg:w-3/12">
+        <div className="flex flex-col gap-5 lg:gap-30 w-full lg:w-3/12 text-justify">
           <div>
             <h1 className="text-2xl font-bold pb-3">End-to-End Development</h1>
             <p className=" text-lg">

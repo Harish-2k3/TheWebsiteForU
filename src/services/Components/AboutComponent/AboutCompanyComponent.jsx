@@ -27,7 +27,7 @@ export default function AboutCompanyComponent() {
         {/* Text Content */}
         <div className="w-full lg:w-1/2 text-left">
           <h1 className="font-medium text-xl text-black py-3">ABOUT US</h1>
-          <p className="text-3xl md:text-5xl font-semibold ">
+          <p className="text-2xl md:text-5xl font-semibold ">
             Transforming Brands with{' '}
           </p>
           <p className='text-4xl md:text-5xl pt-2'><span className="text-[#11778B] font-bold">Digital Excellence</span></p>
@@ -49,28 +49,29 @@ export default function AboutCompanyComponent() {
 
       {/* Features Section - Full Width & Absolute Right */}
       <div className="lg:absolute lg:left-1/3 lg:bottom-5 z-10 bg-black/40 backdrop-blur-lg border border-white/20 shadow-xl p-3 lg:p-7 rounded-2xl">
-        <div className="lg:grid lg:grid-cols-3 flex flex-row lg:gap-10 border-white/20">
+  <div className="lg:grid lg:grid-cols-3 flex flex-col md:flex-row gap-5 lg:gap-10 border-white/20">
 
-          {/* Digital Marketing Service */}
-          <div className="flex flex-col gap-4 px-6 border-r border-white/20 last:border-none">
-            <i className="fa-solid fa-chart-line text-[#C6F806] text-4xl drop-shadow-lg"></i>
-            <p className="font-semibold lg:text-lg text-[15px] text-white ">Result-Driven Digital Marketing</p>
-          </div>
+    {/* Digital Marketing Service */}
+    <div className="flex flex-row md:flex-col items-center md:text-center gap-4 px-6 md:border-r border-white/20 last:border-none">
+      <i className="fa-solid fa-chart-line text-[#C6F806] text-2xl md:text-4xl drop-shadow-lg"></i>
+      <p className="font-semibold lg:text-lg text-[15px] text-white">Result-Driven Digital Marketing</p>
+    </div>
 
-          {/* Web Development Service */}
-          <div className="flex flex-col gap-4 px-6 border-r border-white/20 last:border-none">
-            <i className="fa-solid fa-code text-[#C6F806] text-4xl drop-shadow-lg"></i>
-            <p className="font-semibold lg:text-lg text-[15px] text-white">Custom Web Development</p>
-          </div>
+    {/* Web Development Service */}
+    <div className="flex flex-row md:flex-col items-center md:text-center gap-4 px-6 md:border-r border-white/20 last:border-none">
+      <i className="fa-solid fa-code text-[#C6F806] text-2xl md:text-4xl drop-shadow-lg"></i>
+      <p className="font-semibold lg:text-lg text-[15px] text-white">Custom Web Development</p>
+    </div>
 
-          {/* Mobile App Solutions */}
-          <div className="flex flex-col  gap-4 px-6">
-            <i className="fa-solid fa-mobile-screen-button text-[#C6F806] text-4xl drop-shadow-lg"></i>
-            <p className="font-semibold lg:text-lg text-[15px] text-white">Innovative Mobile App Solutions</p>
-          </div>
+    {/* Mobile App Solutions */}
+    <div className="flex flex-row md:flex-col items-center md:text-center gap-4 px-6">
+      <i className="fa-solid fa-mobile-screen-button text-[#C6F806] text-2xl md:text-4xl drop-shadow-lg"></i>
+      <p className="font-semibold lg:text-lg text-[15px] text-white">Innovative Mobile App Solutions</p>
+    </div>
 
-        </div>
-      </div>
+  </div>
+</div>
+
 
 
 
