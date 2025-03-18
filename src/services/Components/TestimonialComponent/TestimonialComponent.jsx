@@ -56,11 +56,11 @@ export default function TestimonialComponent() {
         <div className="max-w-[1344px] px-5 md:px-10 2xl:px-0 mx-auto pt-30">
             <h1 className="font-medium text-[20px] pb-3">TESTIMONIALS</h1>
             <div className="flex flex-col md:flex-row justify-between items-start md:items-center">
-                <h1 className="font-bold text-4xl md:text-5xl md:w-6/12">
+                <h1 className="font-bold text-3xl md:text-5xl md:w-6/12">
                     What Our Awesome Customers Say
                 </h1>
                 <p className="md:w-5/12 text-gray-600 text-[20px] font-medium">
-                    A long-established fact that a reader will be distracted by the readable content of a page when looking at its layout.
+                    Our clients trust us to deliver quality services that drive results. See how we’ve helped businesses grow.
                 </p>
             </div>
 

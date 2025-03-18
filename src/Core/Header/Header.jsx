@@ -59,7 +59,7 @@ export default function Header() {
         <div className="lg:hidden menu-btn flex flex-row items-center gap-2" onClick={() => setIsOpen(!isOpen)}>
           <i className="fa-solid fa-bars text-white text-2xl cursor-pointer"></i>
           <Link to="tel:+1234567890" className="">
-          <div className="relative group w-10 h-10">
+          <div className="relative group w-10 h-10 z-10">
               {/* Default Icon */}
               <i className="fa-solid fa-phone text-[17px] text-black bg-[#C6F806] p-3 rounded-full cursor-pointer transition duration-300 group-hover:opacity-0 absolute inset-0 flex items-center justify-center"></i>
               {/* Hover Icon (appears on hover) */}

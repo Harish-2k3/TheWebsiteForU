@@ -18,7 +18,7 @@ export default function CollabrationComponent() {
       </p>
 
       {/* Centered Circle Button */}
-      <div className="absolute top-1/2 left-1/2 transform pt-10 md:pt-25 2xl:pt-30 cursor-pointer -translate-x-1/2 -translate-y-1/2 group">
+      <div className="absolute top-[160px] left-1/2 transform pt-10 md:pt-25 2xl:pt-64 cursor-pointer -translate-x-1/2 -translate-y-1/2 group">
         <Link onClick={() => scrollToSection("contact")}>
         <div className="bg-[#11778B] text-white w-18 h-18 md:w-25 md:h-25 lg:w-35 lg:h-35 rounded-full flex flex-col items-center justify-center  font-medium text-[9px] md:text-[16px] lg:text-[20px] gap-2 cursor-pointer transition duration-300">
         <i className="fa-solid fa-arrow-right -rotate-45 ease-in-out transition duration-200 group-hover:rotate-0"></i>

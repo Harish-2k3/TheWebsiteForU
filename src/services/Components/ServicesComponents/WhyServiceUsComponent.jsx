@@ -33,7 +33,7 @@ export default function WhyServiceUsComponent() {
       {/* Why Choose Us Details */}
       <div className="flex flex-col lg:flex-row gap-20 my-10">
         {/* Left Side Content */}
-        <div className="flex flex-col gap-5 lg:gap-30 t w-full lg:w-3/12 text-justify">
+        <div className="flex flex-col gap-5 lg:gap-30 t w-full lg:w-3/12 ">
           <div>
             <h1 className="text-2xl font-bold pb-3">Custom Web & Mobile Apps</h1>
             <p className=" text-lg">
@@ -63,7 +63,7 @@ export default function WhyServiceUsComponent() {
         </div>
 
         {/* Right Side Content */}
-        <div className="flex flex-col gap-5 lg:gap-30 w-full lg:w-3/12 text-justify">
+        <div className="flex flex-col gap-5 lg:gap-30 w-full lg:w-3/12 ">
           <div>
             <h1 className="text-2xl font-bold pb-3">End-to-End Development</h1>
             <p className=" text-lg">

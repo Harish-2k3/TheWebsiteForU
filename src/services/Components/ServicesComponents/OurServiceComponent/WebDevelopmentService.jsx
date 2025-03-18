@@ -44,7 +44,7 @@ export default function WebDevelopmentService() {
         </div>
       </div>
 
-      <div ref={containerRef} className="max-w-[1344px] mx-auto rounded-lg p-8 mt-10 flex flex-col md:flex-row">
+      <div ref={containerRef} className="max-w-[1344px] mx-auto rounded-lg md:p-8 mt-10 flex flex-col md:flex-row">
         <div className="w-full md:w-1/3 border-r p-6">
           <h2 className="text-2xl font-bold mb-4 text-gray-800">Our Services</h2>
           <div className="border border-gray-300 rounded-lg overflow-hidden">
@@ -104,46 +104,34 @@ export default function WebDevelopmentService() {
         </div>
       </div>
 
-      <footer className="bg-[#11778B] text-white py-6 border-b-[1px] border-[#0D5C6B]">
-        <div className="max-w-[1344px] mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-6 items-center">
-          <div>
-            <h3 className="text-2xl font-semibold mb-3">Our Services</h3>
+      {/* Footer */}
+      <footer className="bg-[#11778B] text-white py-8 border-t-[1px] border-[#0D5C6B]">
+        <div className="max-w-[1344px] xl:max-w-[1344px] mx-auto px-6 grid grid-cols-2 gap-8 items-start lg:items-center">
+          {/* Services Section - Left Side */}
+          <div className="text-left flex flex-col items-start xl:items-center">
+            <h3 className="text-2xl font-semibold mb-4">Our Services</h3>
             <ul className="space-y-2 text-lg">
-              <li>Web Development</li>
-              <li>Mobile App Development</li>
-              <li>Digital Marketing</li>
+              <li className="hover:text-[#C6F806] cursor-pointer transition">
+                Web Development
+              </li>
+              <li className="hover:text-[#C6F806] cursor-pointer transition">
+                Mobile App Development
+              </li>
+              <li className="hover:text-[#C6F806] cursor-pointer transition">
+                Digital Marketing
+              </li>
             </ul>
           </div>
 
-          <div className="flex flex-col items-center">
-            <h3 className="text-2xl font-semibold mb-3">Need Help?</h3>
+          {/* Contact Section - Right Side */}
+          <div className="text-right flex flex-col items-end xl:items-center">
+            <h3 className="text-2xl font-semibold mb-4">Need Help?</h3>
             <a
               href="/contact"
-              className="bg-[#1B263B] font-bold text-white px-6 py-2 rounded-lg hover:bg-[#C6F806] hover:text-black transition"
+              className="bg-[#1B263B] font-bold text-white px-6 py-2 rounded-lg hover:bg-[#C6F806] hover:text-black transition shadow-md"
             >
               Contact Us
             </a>
-          </div>
-
-          <div className="flex flex-col items-center">
-            <h3 className="text-2xl font-semibold mb-3">Quick Links</h3>
-            <ul className="space-y-2 text-lg">
-              <li>
-                <a href="/" className="hover:text-[#C6F806] transition">
-                  Home
-                </a>
-              </li>
-              <li>
-                <a href="/" className="hover:text-[#C6F806] transition">
-                  About Us
-                </a>
-              </li>
-              <li>
-                <a href="/" className="hover:text-[#C6F806] transition">
-                  Projects
-                </a>
-              </li>
-            </ul>
           </div>
         </div>
       </footer>

@@ -96,18 +96,36 @@ export default function ContactUsComponent() {
             )}
 
             {isContactPage && (
-                <div className="grid grid-cols-1 md:grid-cols-3 max-w-[1344px] mx-auto gap-5 pt-10">
-                    {["Our Address", "Email Us", "Call Us"].map((title, index) => (
-                        <div key={index} className="bg-[#f6f3fe] p-6 md:p-10 rounded-lg text-center flex flex-col gap-5 items-center">
-                            <i className={`fa-solid ${index === 0 ? 'fa-location-dot' : index === 1 ? 'fa-envelope' : 'fa-phone-volume'} text-5xl md:text-7xl text-[#11778B]`}></i>
-                            <p className="text-xl md:text-2xl font-bold">{title}</p>
-                            <span className="text-sm md:text-lg">{index === 0 ? "2464 Royal Ln. Mesa, NJ 45463" : index === 1 ? "Email us anytime." : "+111 98172817"}</span>
-                        </div>
-                    ))}
-                </div>
+                <div className="grid grid-cols-1 md:grid-cols-3 max-w-[1344px] mx-auto gap-5 pt-10 px-5 md:px-10 2xl:px-0">
+                {["Digital Marketing", "Web Development", "Mobile App Development"].map((title, index) => (
+                  <div
+                    key={index}
+                    className="bg-[#f6f3fe] p-6 md:p-10  rounded-lg text-center flex flex-col gap-5 items-center"
+                  >
+                    <i
+                      className={`fa-solid ${
+                        index === 0
+                          ? "fa-chart-line" // Icon for Digital Marketing
+                          : index === 1
+                          ? "fa-code" // Icon for Web Development
+                          : "fa-mobile-alt" // Icon for Mobile App Development
+                      } text-5xl md:text-7xl text-[#11778B]`}
+                    ></i>
+                    <p className="text-xl md:text-2xl font-bold">{title}</p>
+                    <span className="text-sm md:text-lg">
+                      {index === 0
+                        ? "Boost your brand with targeted strategies."
+                        : index === 1
+                        ? "Craft responsive and dynamic websites."
+                        : "Build intuitive and powerful mobile apps."}
+                    </span>
+                  </div>
+                ))}
+              </div>
+              
             )}
 
-            <div className={`mx-auto px-5 md:px-10 2xl:px-0 ${isContactPage ? "max-w-[1200px]" : "max-w-full"}`}>
+            <div id="contact" className={`mx-auto px-5 md:px-10 2xl:px-0 ${isContactPage ? "max-w-[1200px]" : "max-w-full"}`}>
                 <div className="py-10 grid grid-cols-1 md:grid-cols-2 max-w-[1344px] mx-auto">
                     <div className="flex flex-col space-y-4 gap-5 justify-center">
                         <div className="flex items-center gap-4">
@@ -135,8 +153,8 @@ export default function ContactUsComponent() {
                         </div>
                     </div>
 
-                    <form onSubmit={handleSubmit} className="flex flex-col gap-5 pt-10 lg:pt-0">
-                        <p className='text-5xl'>Let's get started!</p>
+                    <form onSubmit={handleSubmit} className="flex flex-col gap-5 pt-10 lg:py-20">
+                        <p className='text-3xl md:text-5xl'>Let's get started!</p>
 
                         {/* Name & Email Side by Side */}
                         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
