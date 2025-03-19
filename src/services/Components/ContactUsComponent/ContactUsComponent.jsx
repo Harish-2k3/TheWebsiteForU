@@ -132,7 +132,7 @@ export default function ContactUsComponent() {
                             <i className="fa-solid fa-mobile-screen text-[#11778B] text-3xl w-10 flex justify-center"></i>
                             <div className="border-l-2 border-gray-300 pl-4">
                                 <p className="text-gray-600 text-lg">Call Our Experts</p>
-                                <span className="font-semibold text-xl">+111 98172817</span>
+                                <span className="font-semibold text-xl">+111 1122 3344</span>
                             </div>
                         </div>
 
@@ -140,7 +140,7 @@ export default function ContactUsComponent() {
                             <i className="fa-solid fa-envelope text-[#11778B] text-3xl w-10 flex justify-center"></i>
                             <div className="border-l-2 border-gray-300 pl-4">
                                 <p className="text-gray-600 text-lg">Email Us</p>
-                                <span className="font-semibold text-xl">help@gmail.com</span>
+                                <span className="font-semibold text-xl">thewebsiteforu@gmail.com</span>
                             </div>
                         </div>
 
@@ -148,7 +148,7 @@ export default function ContactUsComponent() {
                             <i className="fa-solid fa-location-dot text-[#11778B] text-3xl w-10 flex justify-center"></i>
                             <div className="border-l-2 border-gray-300 pl-4">
                                 <p className="text-gray-600 text-lg">Our Address</p>
-                                <span className="font-semibold text-xl">New Jersey, 45463</span>
+                                <span className="font-semibold text-xl">Folsom, CA, 45463</span>
                             </div>
                         </div>
                     </div>

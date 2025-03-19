@@ -12,7 +12,7 @@ export default function WhyServiceUsComponent() {
   return (
     <div className="max-w-[1344px] px-5 md:px-10 2xl:px-0 mx-auto pt-20 ">
       {/* Header Section */}
-      <h1 className="font-medium text-[20px] pb-3 ">WHY CHOOSE US</h1>
+      <h1 className="font-medium text-[20px] pb-3">WHY CHOOSE US</h1>
       <div className="flex flex-col md:flex-row justify-between items-center mb-10 text-center md:text-left">
         <p className="text-3xl md:text-5xl text-left w-full pb-5 md:pb-0">
           Innovative <span className="text-[#11778B] font-bold">Tech Solutions</span> for Your Business
@@ -31,9 +31,9 @@ export default function WhyServiceUsComponent() {
       <hr />
 
       {/* Why Choose Us Details */}
-      <div className="flex flex-col lg:flex-row gap-20 my-10">
+      <div className="flex flex-col lg:flex-row gap-20 my-10 md:pt-10">
         {/* Left Side Content */}
-        <div className="flex flex-col gap-5 lg:gap-30 t w-full lg:w-3/12 ">
+        <div className="flex flex-col gap-5 lg:gap-20 t w-full lg:w-6/12 ">
           <div>
             <h1 className="text-2xl font-bold pb-3">Custom Web & Mobile Apps</h1>
             <p className=" text-lg">
@@ -49,7 +49,7 @@ export default function WhyServiceUsComponent() {
         </div>
 
         {/* Center Image */}
-        <div className="relative flex items-center justify-center w-full md:my-20">
+        <div className="relative flex items-center justify-center w-full my-10 md:my-20">
           <img 
             src="why-choose-img.png" 
             alt="Why Choose Us" 
@@ -63,7 +63,7 @@ export default function WhyServiceUsComponent() {
         </div>
 
         {/* Right Side Content */}
-        <div className="flex flex-col gap-5 lg:gap-30 w-full lg:w-3/12 ">
+        <div className="flex flex-col gap-5 lg:gap-20 t w-full lg:w-6/12">
           <div>
             <h1 className="text-2xl font-bold pb-3">End-to-End Development</h1>
             <p className=" text-lg">

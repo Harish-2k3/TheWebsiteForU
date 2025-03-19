@@ -45,31 +45,46 @@ export default function WebDevelopmentService() {
       </div>
 
       <div ref={containerRef} className="max-w-[1344px] mx-auto rounded-lg md:p-8 mt-10 flex flex-col md:flex-row">
-        <div className="w-full md:w-1/3 border-r p-6">
-          <h2 className="text-2xl font-bold mb-4 text-gray-800">Our Services</h2>
-          <div className="border border-gray-300 rounded-lg overflow-hidden">
-            <ul className="divide-y divide-gray-300">
-              {[
-                { name: "Digital Marketing", icon: "fa-chart-line", link: "/digital-marketing" },
-                { name: "Mobile App Development", icon: "fa-mobile-alt", link: "/mobile-app-development" },
-                { name: "Web Development", icon: "fa-laptop-code", link: "/web-development" }
-              ].map((service) => (
-                <li
-                  key={service.name}
-                  className={`p-4 flex items-center gap-3 cursor-pointer ${
-                    selectedService === service.name ? "bg-[#11778B] text-white" : "bg-white text-gray-700"
-                  } hover:bg-[#11778B] hover:text-white transition`}
-                  onClick={() => setSelectedService(service.name)}
-                >
-                  <i className={`fa-solid ${service.icon} text-lg`}></i>
-                  <Link to={service.link} className="text-lg font-medium block">
-                    {service.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
+        <div className="w-full md:w-1/3 border-r md:p-6 relative">
+                  <div className="sticky top-20 z-10 flex flex-col gap-8">
+                    {/* Our Services Section */}
+                    <div>
+                      <h2 className="text-2xl font-bold mb-4 text-gray-800">Our Services</h2>
+                      <div className="border border-gray-300 rounded-lg overflow-hidden">
+                        <ul className="divide-y divide-gray-300">
+                          {[
+                            { name: "Digital Marketing", icon: "fa-chart-line", link: "/digital-marketing" },
+                            { name: "Mobile App Development", icon: "fa-mobile-alt", link: "/mobile-app-development" },
+                            { name: "Web Development", icon: "fa-laptop-code", link: "/web-development" }
+                          ].map((service) => (
+                            <li
+                              key={service.name}
+                              className={`p-4 flex items-center gap-3 cursor-pointer ${selectedService === service.name ? "bg-[#11778B] text-white" : "bg-white text-gray-700"
+                                } hover:bg-[#11778B] hover:text-white transition`}
+                              onClick={() => setSelectedService(service.name)}
+                            >
+                              <i className={`fa-solid ${service.icon} text-lg`}></i>
+                              <Link to={service.link} className="text-lg font-medium block">
+                                {service.name}
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    </div>
+        
+                    {/* Contact Info Section */}
+                    <div className="border border-gray-300 rounded-lg p-6 bg-white shadow-md">
+                      <h2 className="text-2xl font-bold mb-4 text-gray-800">Contact Info</h2>
+                      <p className="text-gray-700 mb-4">
+                          Get in touch with us for project consultations and inquiries.
+                        </p>
+                      <Link to="/" className="text-lg bg-[#11778B] px-3 py-2 rounded-full font-medium hover:bg-[#11778be0] text-white">
+                        Contact us
+                      </Link>
+                    </div>
+                  </div>
+                </div>
 
         <div className="w-full md:w-2/3 p-6">
           {selected ? (
@@ -82,7 +97,7 @@ export default function WebDevelopmentService() {
               {selected.sections.map((section, index) => (
                 <div key={index} className="mt-6 border-t pt-4">
                   <button
-                    className="flex justify-between w-full text-left text-xl font-semibold text-gray-800 hover:text-[#11778B] transition"
+                    className="flex cursor-pointer justify-between w-full text-left text-xl font-semibold text-gray-800 hover:text-[#11778B] transition"
                     onClick={() => toggleExpand(section.title)}
                   >
                     {section.title}
@@ -103,38 +118,6 @@ export default function WebDevelopmentService() {
           )}
         </div>
       </div>
-
-      {/* Footer */}
-      <footer className="bg-[#11778B] text-white py-8 border-t-[1px] border-[#0D5C6B]">
-        <div className="max-w-[1344px] xl:max-w-[1344px] mx-auto px-6 grid grid-cols-2 gap-8 items-start lg:items-center">
-          {/* Services Section - Left Side */}
-          <div className="text-left flex flex-col items-start xl:items-center">
-            <h3 className="text-2xl font-semibold mb-4">Our Services</h3>
-            <ul className="space-y-2 text-lg">
-              <li className="hover:text-[#C6F806] cursor-pointer transition">
-                Web Development
-              </li>
-              <li className="hover:text-[#C6F806] cursor-pointer transition">
-                Mobile App Development
-              </li>
-              <li className="hover:text-[#C6F806] cursor-pointer transition">
-                Digital Marketing
-              </li>
-            </ul>
-          </div>
-
-          {/* Contact Section - Right Side */}
-          <div className="text-right flex flex-col items-end xl:items-center">
-            <h3 className="text-2xl font-semibold mb-4">Need Help?</h3>
-            <a
-              href="/contact"
-              className="bg-[#1B263B] font-bold text-white px-6 py-2 rounded-lg hover:bg-[#C6F806] hover:text-black transition shadow-md"
-            >
-              Contact Us
-            </a>
-          </div>
-        </div>
-      </footer>
     </>
   );
 }

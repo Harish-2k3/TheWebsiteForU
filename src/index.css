@@ -31,6 +31,21 @@
   }
 }
 
+@keyframes move-triangle {
+  0% {
+    transform: translate(0, 0);
+  }
+  33% {
+    transform: translate(50px, 0); /* Move horizontally */
+  }
+  66% {
+    transform: translate(25px, -43px); /* Move to top point */
+  }
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
 /* Apply horizontal bounce animation */
 .bounce-x {
   animation: bounce-x 3s linear infinite;
@@ -39,6 +54,12 @@
 /* Apply vertical bounce animation */
 .bounce-y {
   animation: bounce-y 2.5s ease-in-out infinite;
+}
+
+.triangle-shape {
+  width: 100px; /* Adjust size if needed */
+  height: auto;
+  animation: move-triangle 5s linear infinite;
 }
 
 /* Apply rotation animation */
@@ -80,8 +101,6 @@
 .rotate-circle {
   animation: marquee-right 10s linear infinite;
 }
-
-
 
 
 .holographic-container {

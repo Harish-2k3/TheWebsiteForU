@@ -53,7 +53,7 @@ export default function TestimonialComponent() {
     }, [itemsPerSlide]);
 
     return (
-        <div className="max-w-[1344px] px-5 md:px-10 2xl:px-0 mx-auto pt-30">
+        <div className="max-w-[1344px] px-5 md:px-10 2xl:px-0 mx-auto pt-20">
             <h1 className="font-medium text-[20px] pb-3">TESTIMONIALS</h1>
             <div className="flex flex-col md:flex-row justify-between items-start md:items-center">
                 <h1 className="font-bold text-3xl md:text-5xl md:w-6/12">
@@ -79,8 +79,8 @@ export default function TestimonialComponent() {
                         </div>
                     </div>
 
-                    <div className="flex flex-row gap-3">
-                        <button
+                    <div className="absolute md:relative right-5 flex flex-row gap-3 space-x-2 md:space-x-0">
+                    <button
                             className="bg-[#11778B] text-white hover:bg-[#11778bea] px-5 py-3 rounded-full cursor-pointer"
                             onClick={() =>
                                 setActiveIndex((activeIndex - itemsPerSlide + testimonials.length) % testimonials.length)
