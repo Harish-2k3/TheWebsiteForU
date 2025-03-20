@@ -54,9 +54,9 @@ export default function TestimonialComponent() {
 
     return (
         <div className="max-w-[1344px] px-5 md:px-10 2xl:px-0 mx-auto pt-20">
-            <h1 className="font-medium text-[20px] pb-3">TESTIMONIALS</h1>
+            <h1 className="font-medium text-[20px]">TESTIMONIALS</h1>
             <div className="flex flex-col md:flex-row justify-between items-start md:items-center">
-                <h1 className="font-bold text-3xl md:text-5xl md:w-6/12">
+                <h1 className="font-bold text-3xl md:text-4xl lg:text-5xl md:w-6/12 mb-5">
                     What Our Awesome Customers Say
                 </h1>
                 <p className="md:w-5/12 text-gray-600 text-[20px] font-medium">
@@ -66,8 +66,8 @@ export default function TestimonialComponent() {
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8 py-10">
                 {/* Left Section */}
-                <div className="col-span-2 flex flex-col items-start gap-15">
-                    <div className="flex flex-row items-center gap-5">
+                <div className="col-span-2 flex lg:flex-col items-start gap-15">
+                    <div className="flex flex-row justify-between items-center gap-5">
                         <img src="T1.png" alt="Profile" className="w-16 h-16 rounded-full" />
                         <div>
                             <div className="flex text-yellow-500">
@@ -79,7 +79,7 @@ export default function TestimonialComponent() {
                         </div>
                     </div>
 
-                    <div className="absolute md:relative right-5 flex flex-row gap-3 space-x-2 md:space-x-0">
+                    <div className="absolute md:static right-5 flex flex-row gap-3 space-x-2 md:space-x-0">
                     <button
                             className="bg-[#11778B] text-white hover:bg-[#11778bea] px-5 py-3 rounded-full cursor-pointer"
                             onClick={() =>

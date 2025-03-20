@@ -1,4 +1,3 @@
-import { div } from "framer-motion/client";
 import React from "react";
 import { Link } from "react-router-dom";
 
@@ -25,13 +24,14 @@ export default function OurServicesComponent() {
       path: "/web-development",
     }
   ];
+  
 
   return (
     <div className="max-w-[1344px] mx-auto mt-20 px-5 md:px-10 2xl:px-0"  id="services">
-      <h1 className="font-medium text-[20px] pb-3">OUR SERVICES</h1>
-      <p className="text-3xl md:text-5xl font-medium">Our social media Services</p>
+      <h1 className="font-medium text-[20px]">OUR SERVICES</h1>
+      <p className="text-3xl md:text-4xl xl:text-5xl font-medium">Our social media Services</p>
 
-      <div className="grid grid-cols-1  sm:grid-cols-2 lg:grid-cols-3 gap-6 pt-10">
+      <div className="grid grid-cols-1  sm:grid-cols-2 lg:grid-cols-3 gap-6 pt-5 md:pt-10">
         {services.map((service, index) => (
           <div
             key={index}

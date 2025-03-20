@@ -26,12 +26,12 @@ export default function AboutCompanyComponent() {
 
         {/* Text Content */}
         <div className="w-full lg:w-1/2 text-left">
-          <h1 className="font-medium text-xl text-black py-3">ABOUT US</h1>
-          <p className="text-3xl xl:text-5xl font-semibold ">
+          <h1 className="font-medium text-xl text-black ">ABOUT US</h1>
+          <p className="text-3xl md:text-4xl xl:text-5xl font-semibold ">
             Transforming Brands with{' '}
           </p>
-          <p className='text-4xl xl:text-5xl pt-2'><span className="text-[#11778B] font-bold">Digital Excellence</span></p>
-          <p className="text-lg md:text-xl my-5 xl:my-0 2xl:py-7 pt-5 pb-2 text-justify ">
+          <p className='text-4xl xl:text-5xl md:pt-2'><span className="text-[#11778B] font-bold">Digital Excellence</span></p>
+          <p className="text-lg md:text-2xl lg:text-xl my-5 pb-2 text-justify ">
             At TheWebsiteforU, we specialize in transforming brands with cutting-edge digital solutions. From powerful social media strategies to high-performance web and mobile app development, we help businesses thrive in the digital world. Our expert team combines creativity, technology, and data-driven insights to deliver impactful results. Whether you're looking to enhance your online presence or build a seamless digital experience, we’ve got you covered. Let’s create something extraordinary and take your brand to new heights!
           </p>
 
@@ -83,9 +83,9 @@ export default function AboutCompanyComponent() {
       <div className="flex flex-col lg:flex-row gap-10 justify-between mt-5">
         <div className="flex items-center gap-5 xl:gap-1">
           <h1 className="text-[#11778B] font-bold text-5xl ">100+</h1>
-          <p className="text-lg hidden md:block">
+          <p className="text-lg md:text-2xl xl:text-xl hidden md:block">
             Successful Projects Delivered<br />
-            <span className="text-black text-[19px]">in Web & Mobile App Development</span>
+            <span className="text-black text-[19px] md:text-2xl xl:text-xl">in Web & Mobile App Development</span>
           </p>
           <p className="text-md md:hidden">
             Successful Projects Delivered in Web & Mobile App Development

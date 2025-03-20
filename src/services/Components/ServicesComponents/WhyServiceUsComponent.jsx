@@ -12,9 +12,9 @@ export default function WhyServiceUsComponent() {
   return (
     <div className="max-w-[1344px] px-5 md:px-10 2xl:px-0 mx-auto pt-20 ">
       {/* Header Section */}
-      <h1 className="font-medium text-[20px] pb-3">WHY CHOOSE US</h1>
-      <div className="flex flex-col md:flex-row justify-between items-center mb-10 text-center md:text-left">
-        <p className="text-3xl md:text-5xl text-left w-full pb-5 md:pb-0">
+      <h1 className="font-medium text-[20px]">WHY CHOOSE US</h1>
+      <div className="flex flex-col md:flex-row justify-between items-center mb-5 md:mb-10 text-center md:text-left">
+        <p className="text-3xl md:text-4xl xl:text-5xl text-left md:w-3/2 pb-5 md:pb-0">
           Innovative <span className="text-[#11778B] font-bold">Tech Solutions</span> for Your Business
         </p>
         <div className="flex w-full justify-start md:justify-end">
@@ -31,18 +31,18 @@ export default function WhyServiceUsComponent() {
       <hr />
 
       {/* Why Choose Us Details */}
-      <div className="flex flex-col lg:flex-row gap-20 my-10 md:pt-10">
+      <div className="flex flex-col lg:flex-row gap-20 my-5 md:pt-10">
         {/* Left Side Content */}
-        <div className="flex flex-col gap-5 lg:gap-20 t w-full lg:w-6/12 ">
+        <div className="flex flex-col gap-5 lg:gap-20 w-full lg:w-6/12 xl:w-8/12 ">
           <div>
-            <h1 className="text-2xl font-bold pb-3">Custom Web & Mobile Apps</h1>
-            <p className=" text-lg">
+            <h1 className="text-2xl md:text-3xl font-bold pb-3">Custom Web & Mobile Apps</h1>
+            <p className=" text-lg md:text-2xl">
               We design and develop high-performance web and mobile applications tailored to your business needs.
             </p>
           </div>
           <div>
-            <h1 className="text-2xl font-bold pb-3">Result-Driven Digital Marketing</h1>
-            <p className=" text-lg">
+            <h1 className="text-2xl md:text-3xl font-bold pb-3">Result-Driven Digital Marketing</h1>
+            <p className=" text-lg md:text-2xl">
               Our digital marketing strategies ensure higher engagement, visibility, and conversions for your brand.
             </p>
           </div>
@@ -58,21 +58,21 @@ export default function WhyServiceUsComponent() {
           <img 
             src="why-choose-circle.png" 
             alt="Decorative Circle" 
-            className="absolute top-1/2 left-1/2 rotate-circle md:h-[500px]"
+            className="absolute top-1/2 left-1/2 rotate-circle md:h-[500px] xl:h-[470px]"
           />
         </div>
 
         {/* Right Side Content */}
-        <div className="flex flex-col gap-5 lg:gap-20 t w-full lg:w-6/12">
+        <div className="flex flex-col gap-5 lg:gap-20 t w-full lg:w-6/12 xl:w-8/12">
           <div>
-            <h1 className="text-2xl font-bold pb-3">End-to-End Development</h1>
-            <p className=" text-lg">
+            <h1 className="text-2xl md:text-3xl font-bold pb-3">End-to-End Development</h1>
+            <p className=" text-lg md:text-2xl">
               From concept to deployment, we handle every aspect of the development process with precision.
             </p>
           </div>
           <div>
-            <h1 className="text-2xl font-bold pb-3">24/7 Support & Maintenance</h1>
-            <p className=" text-lg">
+            <h1 className="text-2xl md:text-3xl font-bold pb-3">24/7 Support & Maintenance</h1>
+            <p className=" text-lg md:text-2xl">
               We provide continuous support and maintenance to keep your applications running smoothly.
             </p>
           </div>

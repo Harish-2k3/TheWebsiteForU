@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
@@ -9,6 +9,8 @@ export default function Header() {
   const navRef = useRef(null);
   const location = useLocation();
   const isHomePage = location.pathname === "/";
+  const navigate = useNavigate();
+
 
 
   useEffect(() => {
@@ -35,11 +37,13 @@ export default function Header() {
   }, []);
 
   const scrollToSection = (id) => {
-    const section = document.getElementById(id);
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth", block: "start" });
+    setTimeout(() => {
+      const section = document.getElementById(id);
+      if (section) {
+        section.scrollIntoView({ behavior: "smooth", block: "start" });
+      }
       setIsOpen(false);
-    }
+    }, 100);
   };
 
 
@@ -57,15 +61,15 @@ export default function Header() {
         </div>
 
         <div className="lg:hidden menu-btn flex flex-row items-center gap-2" >
-          <i onClick={() => setIsOpen(!isOpen)} className="fa-solid fa-bars text-white text-2xl cursor-pointer"></i>
-          <Link  to="tel:+1234567890" className="">
-          <div className="relative group w-10 h-10 z-10">
+          <i onClick={() => setIsOpen(!isOpen)} className="fa-solid fa-bars text-white text-2xl md:text-4xl cursor-pointer"></i>
+          <Link to="tel:+1234567890" className="">
+            <div className="relative group w-10 md:w-15 md:h-15 text-center items-center h-10 z-10">
               {/* Default Icon */}
-              <i className="fa-solid fa-phone text-[17px] text-black bg-[#C6F806] p-3 rounded-full cursor-pointer transition duration-300 group-hover:opacity-0 absolute inset-0 flex items-center justify-center"></i>
+              <i className="fa-solid fa-phone text-[17px] md:text-2xl text-black bg-[#C6F806] p-3 md:p-4 rounded-full cursor-pointer transition duration-300 group-hover:opacity-0 absolute inset-0 flex items-center justify-center"></i>
               {/* Hover Icon (appears on hover) */}
-              <i className="fa-solid fa-phone-volume text-black text-[17px] bg-[#C6F806] p-3 rounded-full cursor-pointer transition duration-300 opacity-0 group-hover:opacity-100 absolute inset-0 flex items-center justify-center"></i>
+              <i className="fa-solid fa-phone-volume text-black text-[17px] md:text-2xl bg-[#C6F806] p-3 md:p-4 rounded-full cursor-pointer transition duration-300 opacity-0 group-hover:opacity-100 absolute inset-0 flex items-center justify-center"></i>
             </div>
-            </Link>
+          </Link>
         </div>
 
         <nav
@@ -111,11 +115,14 @@ export default function Header() {
 
           <Link
             to="/"
-            onClick={() => { setIsOpen(false); scrollToSection("contact") }}
+            onClick={(e) => {
+              e.preventDefault();
+              navigate("/", { state: { scrollToContact: true } }); // ✅ Pass state to scroll to contact
+            }}
             className={`font-medium hover:text-[#C6F806] flex items-center gap-2 ${location.pathname !== "/" ? "lg:text-white text-white" : "text-white"
-              }`}
+            }`}
           >
-            Contact Us
+            Contact us
           </Link>
 
           {/* <Link to="tel:+1234567890" className="lg:hidden bg-white px-3 py-2 rounded-xl">
