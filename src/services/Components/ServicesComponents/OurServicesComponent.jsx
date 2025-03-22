@@ -4,30 +4,30 @@ import { Link } from "react-router-dom";
 export default function OurServicesComponent() {
   const services = [
     {
-      img: "project-1-DGImChiM.jpg",
+      img: "Service/project-1-DGImChiM.jpg",
       title: "Digital Marketing",
       subtitle: "Company Advertisement",
-      path: "/digital-marketing",
+      path: "digital-marketing",
     },
 
     {
-      img: "project-4-DyEGdaFN.jpg",
+      img: "Service/project-4-DyEGdaFN.jpg",
       title: "Mobile App Development",
       subtitle: "E-commerce Platform",
-      path: "/mobile-app-development",
+      path: "mobile-app-development",
     },
 
     {
-      img: "project-2-COTidCQZ.jpg",
+      img: "Service/project-2-COTidCQZ.jpg",
       title: "Web Development",
       subtitle: "Marketing Website",
-      path: "/web-development",
+      path: "web-development",
     }
   ];
   
 
   return (
-    <div className="max-w-[1344px] mx-auto mt-20 px-5 md:px-10 2xl:px-0"  id="services">
+    <div className="max-w-[1344px] mx-auto pt-20  px-5 md:px-10 2xl:px-0"  id="services">
       <h1 className="font-medium text-[20px]">OUR SERVICES</h1>
       <p className="text-3xl md:text-4xl xl:text-5xl font-medium">Our social media Services</p>
 
@@ -53,9 +53,9 @@ export default function OurServicesComponent() {
               <div className="flex ">
               <Link
                 to={service.path}
-                className="mt-3 flex items-center gap-2 bg-[#11778B] hover:bg-[#11778be0] text-white font-medium px-4 py-2 rounded-full shadow-lg"
+                className="mt-3 flex items-center gap-2 bg-[#11778B] group hover:bg-[#11778be0] text-white font-medium px-4 py-2 rounded-full shadow-lg"
               >
-                Read More <i className="fa-solid fa-arrow-right"></i>
+                Read More <i className="fa-solid -rotate-45 fa-arrow-right group-hover:rotate-0 ease-in-out transition duration-200"></i>
               </Link>
               </div>
               

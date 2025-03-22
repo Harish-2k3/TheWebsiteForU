@@ -51,12 +51,12 @@ export default function WhyServiceUsComponent() {
         {/* Center Image */}
         <div className="relative flex items-center justify-center w-full my-10 md:my-20">
           <img 
-            src="why-choose-img.png" 
+            src="Service/why-choose-img.png" 
             alt="Why Choose Us" 
             className="object-contain h-[250px] md:h-[300px]"
           />
           <img 
-            src="why-choose-circle.png" 
+            src="Service/why-choose-circle.png" 
             alt="Decorative Circle" 
             className="absolute top-1/2 left-1/2 rotate-circle md:h-[500px] xl:h-[470px]"
           />

@@ -5,21 +5,21 @@ export default function HomeComponent() {
     <div className="bg-center relative pt-18 md:pt-25 bg-gradient-to-b from-[#11778B] to-[#0A1F44] overflow-hidden" id='home'>
       {/* Floating Images */}
       <div className='absolute top-[55vh] md:top-[35vh] lg:top-[30vh] left-3 lg:left-7 bounce-x'>
-        <img src="mike-shape.png" alt="loading..." />
+        <img src="Home/mike-shape.png" alt="loading..." />
       </div>
       <div className='absolute top-[33vh] md:top-[23vh] lg:top-[20vh] lg:right-20 right-10 md:right-10 bounce-y'>
-        <img src="energy-shape.png" alt="loading..." />
+        <img src="Home/energy-shape.png" alt="loading..." />
       </div>
-      <div className='absolute bottom-[33vh] lg:bottom-[25vh] right-2 md:right-15 lg:right-70 z-10 triangle-shape'>
-        <img src="arrow-shape.png" alt="loading..." />
+      <div className='absolute bottom-[33vh] lg:bottom-[28vh] 2xl:bottom-[25vh] right-2 md:right-15 2xl:right-70 z-10 triangle-shape'>
+        <img src="Home/arrow-shape.png" alt="loading..." />
       </div>
       <div className='hidden md:block absolute bottom-0 right-0  bounce-y'>
-        <img src="rocket.png" alt="loading..." />
+        <img src="Home/rocket.png" alt="loading..." />
       </div>
 
       {/* Hero Text Image */}
       <div className='flex items-center justify-center pt-35 lg:pt-20 pb-15 z-20'>
-        <img src="hero-text.png" alt="loading" className='z-20 px-5 md:px-10 lg:px-0' />
+        <img src="Home/hero-text.png" alt="loading" className='z-20 px-5 md:px-10 lg:px-0' />
       </div>
 
       {/* Main Content with Fixed Max Width */}
@@ -37,7 +37,7 @@ export default function HomeComponent() {
 
         {/* Center Image */}
         <div className="h-full w-full lg:w-6/12 flex justify-center items-center max-w-[1024px]">
-          <img src="hero-image (1).png" alt="loading..." className="max-h-[70vh] object-contain z-10" />
+          <img src="Home/hero-image (1).png" alt="loading..." className="max-h-[70vh] object-contain z-10" />
         </div>
 
         {/* Right Content */}

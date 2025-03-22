@@ -14,6 +14,12 @@ export default function DigitalMarketingService() {
     navigate("/", { state: { scrollToServices: true } }); // ✅ Send state to home
   };
 
+  const toggleExpand = (section) => {
+    setExpandedSections((prev) => ({
+      [section]: !prev[section], // Toggle the selected section
+    }));
+  };
+
   // Close all expanded sections when clicking outside
   useEffect(() => {
     const handleClickOutside = (event) => {
@@ -96,21 +102,26 @@ export default function DigitalMarketingService() {
             {/* Contact Info Section */}
             <div className="border border-gray-300 rounded-lg p-6 bg-white shadow-md">
               <h2 className="text-2xl font-bold mb-4 text-gray-800">Contact Info</h2>
-              <p className="text-gray-700 mb-4">Get in touch with us for project consultations and inquiries.</p>
+              <p className="text-lg md:text-xl font-medium mb-4 leading-relaxed tracking-wide bg-gradient-to-r from-[#0F172A] via-[#1E3A8A] to-[#0E7490] bg-clip-text text-transparent">
+                Get in touch with us for project consultations and inquiries.
+              </p>
+
 
               {/* ✅ Move onClick to Link and Remove e.preventDefault() */}
-              <Link
-                to="/"
-                onClick={(e) => {
-                  e.preventDefault(); // ✅ Prevent default link behavior
-                  navigate("/", { state: { scrollToContact: true } }); // ✅ Correctly pass state
-                }}
-                className="text-lg bg-[#11778B] px-3 py-2 rounded-full font-medium hover:bg-[#11778be0] text-white"
-              >
-                Contact us
-              </Link>
+              {/* Button Section */}
+              <div className="flex lg:items-start items-center w-auto pb-7 lg:pb-0">
+                <div className='group'>
+                  <button to="/"
+                    onClick={(e) => {
+                      e.preventDefault(); // ✅ Prevent default link behavior
+                      navigate("/", { state: { scrollToContact: true } }); // ✅ Correctly pass state
+                    }} className="bg-[#11778B] text-white cursor-pointer z-10 font-bold px-4 py-3 rounded-full transition duration-300 group ">
+                    Contact Us
+                  </button>
+                  <i className="fa-solid fa-right-long z-10 text-white -rotate-45 easy-in-out group-hover:rotate-0 bg-[#11778B] p-4 rounded-full cursor-pointer transition duration-300"></i>
+                </div>
+              </div>
             </div>
-
           </div>
         </div>
 
@@ -121,7 +132,25 @@ export default function DigitalMarketingService() {
               <img src={selected.img} alt={selectedService} className="mx-auto mb-4 rounded-lg shadow-md" />
               <h2 className="text-3xl font-bold text-[#11778B]">{selectedService}</h2>
               <p className="mt-4 text-lg">{selected.description}</p>
-              <div className="mt-4 " dangerouslySetInnerHTML={{ __html: selected.details }}></div>
+              <div className="mt-4" dangerouslySetInnerHTML={{ __html: selected.details }}></div>
+
+              {selected.sections.map((section, index) => (
+                <div key={index} className="mt-6 border-t pt-4">
+                  <button
+                    className="flex cursor-pointer justify-between w-full text-left text-xl font-semibold text-gray-800 hover:text-[#11778B] transition"
+                    onClick={() => toggleExpand(section.title)}
+                  >
+                    {section.title}
+                    <i
+                      className={`fa-solid fa-chevron-down transition-transform duration-300 ${expandedSections[section.title] ? "rotate-180" : ""
+                        }`}
+                    ></i>
+                  </button>
+                  {expandedSections[section.title] && (
+                    <div className="mt-2" dangerouslySetInnerHTML={{ __html: section.content }}></div>
+                  )}
+                </div>
+              ))}
             </>
           ) : (
             <p className="text-lg text-gray-700">Service details not available.</p>

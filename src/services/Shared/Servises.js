@@ -1,6 +1,6 @@
 export const services = [
     {
-      img: "services.jpg",
+      img: "Service/services.jpg",
       name: "Digital Marketing",
       icon: "fa-chart-line",
       description: "Boost your brand with expert SEO, PPC, and social media strategies to drive engagement and conversions.",
@@ -68,7 +68,7 @@ export const services = [
     },
 
     {
-      img: "services.jpg",
+      img: "Service/services.jpg",
       name: "Mobile App Development",
       icon: "fa-mobile-alt",
       description: "Develop high-quality iOS and Android apps that provide seamless user experiences and meet business objectives.",
@@ -139,7 +139,7 @@ export const services = [
     },
 
     {
-      img: "services.jpg",
+      img: "Service/services.jpg",
       name: "Web Development",
       icon: "fa-code",
       description: "Create stunning, responsive websites that enhance user engagement and business growth.",

@@ -140,7 +140,7 @@ export default function ContactUsComponent() {
                             <i className="fa-solid fa-envelope text-[#11778B] text-3xl w-10 flex justify-center"></i>
                             <div className="border-l-2 border-gray-300 pl-4">
                                 <p className="text-gray-600 text-lg lg:text-2xl">Email Us</p>
-                                <span className="font-semibold text-xl lg:text-2xl">thewebsiteforu@gmail.com</span>
+                                <span className="font-semibold text-xl lg:text-2xl">thewebsite4foru@gmail.com</span>
                             </div>
                         </div>
 

@@ -15,7 +15,7 @@ export default function WebDevelopmentService() {
 
   const toggleExpand = (section) => {
     setExpandedSections((prev) => ({
-      [section]: !prev[section],
+      [section]: !prev[section], // Toggle the selected section
     }));
   };
 
@@ -96,24 +96,30 @@ export default function WebDevelopmentService() {
                     {/* Contact Info Section */}
                     <div className="border border-gray-300 rounded-lg p-6 bg-white shadow-md">
                                   <h2 className="text-2xl font-bold mb-4 text-gray-800">Contact Info</h2>
-                                  <p className="text-gray-700 mb-4">Get in touch with us for project consultations and inquiries.</p>
+                                  <p className="text-lg md:text-xl font-medium mb-4 leading-relaxed tracking-wide bg-gradient-to-r from-[#0F172A] via-[#1E3A8A] to-[#0E7490] bg-clip-text text-transparent">
+  Get in touch with us for project consultations and inquiries.
+</p>
+
                     
                                   {/* ✅ Move onClick to Link and Remove e.preventDefault() */}
-                                  <Link
-                                    to="/"
-                                    onClick={(e) => {
-                                      e.preventDefault(); // ✅ Prevent default link behavior
-                                      navigate("/", { state: { scrollToContact: true } }); // ✅ Correctly pass state
-                                    }}
-                                    className="text-lg bg-[#11778B] px-3 py-2 rounded-full font-medium hover:bg-[#11778be0] text-white"
-                                  >
-                                    Contact us
-                                  </Link>
+                                  {/* Button Section */}
+              <div className="flex lg:items-start items-center w-auto pb-7 lg:pb-0">
+                <div className='group'>
+                  <button to="/"
+                    onClick={(e) => {
+                      e.preventDefault(); // ✅ Prevent default link behavior
+                      navigate("/", { state: { scrollToContact: true } }); // ✅ Correctly pass state
+                    }} className="bg-[#11778B] text-white cursor-pointer z-10 font-bold px-4 py-3 rounded-full transition duration-300 group ">
+                    Contact Us
+                  </button>
+                  <i className="fa-solid fa-right-long z-10 text-white -rotate-45 easy-in-out group-hover:rotate-0 bg-[#11778B] p-4 rounded-full cursor-pointer transition duration-300"></i>
+                </div>
+              </div>
                                 </div>
                   </div>
                 </div>
 
-        <div className="w-full md:w-2/3 p-6">
+        <div className="w-full md:w-2/3 pt-10 md:pt-0 md:p-6">
           {selected ? (
             <>
               <img src={selected.img} alt={selectedService} className="mx-auto mb-4 rounded-lg shadow-md" />

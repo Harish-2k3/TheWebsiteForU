@@ -10,20 +10,24 @@ import Contactus from "../Contact/Contactus";
 
 export default function Home() {
   const [showButton, setShowButton] = useState(false);
-  const location = useLocation(); // ✅ To capture state
+  const location = useLocation(); // ✅ Capture state
 
   useEffect(() => {
     if (location.state?.scrollToServices) {
-      scrollToSection("services"); // ✅ Scroll to services
+      setTimeout(() => scrollToSection("services"), 150); // ✅ Increased delay to 150ms
     } else if (location.state?.scrollToContact) {
-      scrollToSection("contact"); // ✅ Scroll to contact section
+      setTimeout(() => scrollToSection("contact"), 150); // ✅ Delay ensures section is properly loaded
     }
   }, [location.state]);
-
+  
   const scrollToSection = (id) => {
     const section = document.getElementById(id);
     if (section) {
-      section.scrollIntoView({ behavior: "smooth", block: "start" });
+      const offset = section.offsetTop - 80; // ✅ Correct scroll offset
+      window.scrollTo({
+        top: offset,
+        behavior: "smooth",
+      });
     }
   };
 
@@ -36,11 +40,17 @@ export default function Home() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  useEffect(() => {
+    if (location.state?.scrollToHome) {
+      setTimeout(() => scrollToSection("home"), 150); // ✅ Scroll to home if state passed
+    }
+  }, [location.state]);
+
   return (
     <div>
       <HomeComponent />
       <AboutCompany />
-      <OurServices />
+      <OurServices id="services" />
       <WhyServiceUs />
       <Collabration />
       <Testimonial />
@@ -48,7 +58,7 @@ export default function Home() {
       {showButton && (
         <button
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-          className="fixed bottom-6 right-6 bg-[#11778B] z-100 cursor-pointer border-1 border-white px-2 py-2.5 rounded-full shadow-lg hover:scale-105 text-white transition-all"
+          className="fixed bottom-6 right-6 bg-[#11778B] z-100 cursor-pointer md:border-1 border-white px-2 py-2.5 rounded-full shadow-lg hover:scale-105 text-white transition-all"
         >
           <i className="fa-solid px-2 fa-angles-up"></i>
         </button>

@@ -17,7 +17,7 @@ export default function AboutCompanyComponent() {
         <div className="w-full lg:w-1/2 relative flex justify-center holographic-container">
           <div className='holographic-card'>
             <img
-              src="about-us-image (1).jpg"
+              src="About/about-us-image (1).jpg"
               alt="loading..."
               className="rounded-xl w-full object-cover "
             />

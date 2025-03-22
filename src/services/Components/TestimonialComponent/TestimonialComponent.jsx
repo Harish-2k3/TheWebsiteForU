@@ -5,29 +5,29 @@ const testimonials = [
         id: 1,
         name: "Michael Johnson",
         role: "CEO, TechNova Solutions",
-        image: "T5.png",
-        review: "The team at theWebsiteForU transformed our online presence with their digital marketing expertise. Our traffic and leads have skyrocketed since we partnered with them!",
+        image: "Testimonial/T5.png",
+        review: "The team at theWebsite4ForU transformed our online presence with their digital marketing expertise. Our traffic and leads have skyrocketed since we partnered with them!",
     },
     {
         id: 2,
         name: "Sophia Martinez",
         role: "Founder, TrendyApp",
-        image: "T2.jpg",
+        image: "Testimonial/T2.jpg",
         review: "Their mobile app development team exceeded our expectations. The app is smooth, user-friendly, and perfectly aligned with our vision. Highly recommend their services!",
     },
     {
         id: 3,
         name: "David Thompson",
         role: "Marketing Director, E-Commerce Hub",
-        image: "T3.jpg",
+        image: "Testimonial/T3.jpg",
         review: "Exceptional SEO and PPC campaigns! Our website now ranks on the first page of Google, and our conversion rates have improved dramatically.",
     },
     {
         id: 4,
         name: "Emma Wilson",
         role: "Operations Manager, NextGen Startups",
-        image: "T4.png",
-        review: "From branding to a fully functional website, theWebsiteForU handled everything flawlessly. Their attention to detail and creativity are top-notch!",
+        image: "Testimonial/T4.png",
+        review: "From branding to a fully functional website, theWebsite4ForU handled everything flawlessly. Their attention to detail and creativity are top-notch!",
     },
 ];
 
@@ -68,7 +68,7 @@ export default function TestimonialComponent() {
                 {/* Left Section */}
                 <div className="col-span-2 flex lg:flex-col items-start gap-15">
                     <div className="flex flex-row justify-between items-center gap-5">
-                        <img src="T1.png" alt="Profile" className="w-16 h-16 rounded-full" />
+                        <img src="Testimonial/T1.png" alt="Profile" className="w-16 h-16 rounded-full" />
                         <div>
                             <div className="flex text-yellow-500">
                                 {[...Array(5)].map((_, i) => (
@@ -110,7 +110,7 @@ export default function TestimonialComponent() {
                                 key={testimonial.id}
                                 className="w-[100%] md:w-[48%] flex-shrink-0 bg-purple-50 p-10 rounded-lg shadow-md relative"
                             >
-                                <img src="shape.png" alt="" className="absolute top-4 left-0" />
+                                <img src="Testimonial/shape.png" alt="" className="absolute top-4 left-0" />
                                 <div className="lg:absolute top-18 -left-8">
                                     <img src={testimonial.image} alt={testimonial.name} className="w-26 h-26 rounded-full border-4 border-white" />
                                 </div>
@@ -134,16 +134,17 @@ export default function TestimonialComponent() {
             </div>
 
             {/* Active Indicator - Updated for Responsive */}
-            <div className="flex justify-center gap-2 mt-4">
-                {Array.from({ length: Math.ceil(testimonials.length / itemsPerSlide) }, (_, index) => (
-                    <span
-                        key={index}
-                        className={`h-3 w-3 rounded-full transition-all ${
-                            index === Math.floor(activeIndex / itemsPerSlide) ? "bg-[#11778B]" : "bg-gray-300"
-                        }`}
-                    ></span>
-                ))}
-            </div>
+<div className="flex justify-center gap-2 mt-4">
+  {Array.from({ length: Math.ceil(testimonials.length / itemsPerSlide) }, (_, index) => (
+    <span
+      key={index}
+      onClick={() => setActiveIndex(index * itemsPerSlide)} // ✅ Scroll to respective slide on click
+      className={`h-3 w-3 rounded-full cursor-pointer transition-all ${
+        index === Math.floor(activeIndex / itemsPerSlide) ? "bg-[#11778B] scale-125" : "bg-gray-300"
+      }`}
+    ></span>
+  ))}
+</div>
         </div>
     );
 }
