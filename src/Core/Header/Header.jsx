@@ -72,7 +72,7 @@ export default function Header() {
       className={`fixed w-full z-[999] top-0 py-3 left-0 right-0 transition-all duration-300 ${isVisible ? "translate-y-0" : "-translate-y-full"
         } ${isScrolled || !isHomePage ? "bg-[#11778B]" : "bg-transparent"}`}
     >
-      <div className="flex justify-between items-center lg:px-10 max-w-[90%] lg:max-w-[95rem] 3xl:px-0 mx-auto ">
+      <div className="flex justify-between items-center lg:px-10  lg:max-w-[95rem] 3xl:px-0 mx-auto ">
         <div className="cursor-pointer">
           <Link to="/">
             <img src="Header/lllArtboard 7.png" alt="Logo" className="w-60 md:w-80" />

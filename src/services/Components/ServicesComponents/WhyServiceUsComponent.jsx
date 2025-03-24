@@ -31,9 +31,9 @@ export default function WhyServiceUsComponent() {
       <hr />
 
       {/* Why Choose Us Details */}
-      <div className="flex flex-col lg:flex-row gap-20 my-5 md:pt-10">
+      <div className="flex flex-col lg:flex-row gap-5 my-5 md:pt-10">
         {/* Left Side Content */}
-        <div className="flex flex-col gap-5 lg:gap-20 w-full lg:w-6/12 xl:w-8/12 ">
+        <div className="flex flex-col gap-5 lg:gap-30 w-full lg:w-6/12 xl:w-8/12 ">
           <div>
             <h1 className="text-2xl md:text-3xl font-bold pb-3">Custom Web & Mobile Apps</h1>
             <p className=" text-lg md:text-2xl">
@@ -49,21 +49,21 @@ export default function WhyServiceUsComponent() {
         </div>
 
         {/* Center Image */}
-        <div className="relative flex items-center justify-center w-full my-10 md:my-20">
+        <div className="relative flex items-center justify-center w-full my-10 md:my-20 lg:my-0 h-[370px] lg:h-[600px] overflow-x-hidden overflow-y-hidden">
           <img 
             src="Service/why-choose-img.png" 
             alt="Why Choose Us" 
-            className="object-contain h-[250px] md:h-[300px]"
+            className="object-contain h-[200px] lg:h-[250px]"
           />
           <img 
             src="Service/why-choose-circle.png" 
             alt="Decorative Circle" 
-            className="absolute top-1/2 left-1/2 rotate-circle md:h-[500px] xl:h-[470px]"
+            className="absolute top-1/2 left-1/2 rotate-circle h-[350px] lg:h-[450px] xl:h-[470px]"
           />
         </div>
 
         {/* Right Side Content */}
-        <div className="flex flex-col gap-5 lg:gap-20 t w-full lg:w-6/12 xl:w-8/12">
+        <div className="flex flex-col gap-5 lg:gap-30 w-full lg:w-6/12 xl:w-8/12">
           <div>
             <h1 className="text-2xl md:text-3xl font-bold pb-3">End-to-End Development</h1>
             <p className=" text-lg md:text-2xl">

@@ -123,31 +123,31 @@ export default function WebDevelopmentService() {
           {selected ? (
             <>
               <img src={selected.img} alt={selectedService} className="mx-auto mb-4 rounded-lg shadow-md" />
-              <h2 className="text-3xl font-bold text-[#11778B]">{selectedService}</h2>
-              <p className="mt-4 text-lg">{selected.description}</p>
-              <div className="mt-4" dangerouslySetInnerHTML={{ __html: selected.details }}></div>
+              <h2 className="text-2xl font-bold text-[#11778B]">{selectedService}</h2>
+              <p className="mt-4 text-xl">{selected.description}</p>
+              <div className="mt-4 text-xl" dangerouslySetInnerHTML={{ __html: selected.details }}></div>
 
               {selected.sections.map((section, index) => (
                 <div key={index} className="mt-6 border-t pt-4">
                   <button
-                    className="flex cursor-pointer justify-between w-full text-left text-xl font-semibold text-gray-800 hover:text-[#11778B] transition"
+                    className="flex cursor-pointer justify-between w-full text-left text-2xl font-semibold hover:text-[#11778B] transition"
                     onClick={() => toggleExpand(section.title)}
                   >
                     {section.title}
                     <i
-                      className={`fa-solid fa-chevron-down transition-transform duration-300 ${
+                      className={`fa-solid text-2xl fa-chevron-down transition-transform duration-300 ${
                         expandedSections[section.title] ? "rotate-180" : ""
                       }`}
                     ></i>
                   </button>
                   {expandedSections[section.title] && (
-                    <div className="mt-2" dangerouslySetInnerHTML={{ __html: section.content }}></div>
+                    <div className="mt-2 text-xl" dangerouslySetInnerHTML={{ __html: section.content }}></div>
                   )}
                 </div>
               ))}
             </>
           ) : (
-            <p className="text-lg text-gray-700">Service details not available.</p>
+            <p className="text-lg">Service details not available.</p>
           )}
         </div>
       </div>
