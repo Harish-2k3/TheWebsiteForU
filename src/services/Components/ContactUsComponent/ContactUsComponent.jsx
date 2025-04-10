@@ -43,7 +43,7 @@ export default function ContactUsComponent() {
         };
 
         try {
-            const response = await axios.post("http://localhost:3000/api/contact", payload, {
+            const response = await axios.post("https://thewebsite4u.com/send_email.php", payload, {
                 headers: { "Content-Type": "application/json" }
             });
 
