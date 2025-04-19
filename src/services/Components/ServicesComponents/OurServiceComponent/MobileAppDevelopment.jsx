@@ -135,7 +135,7 @@ export default function MobileAppDevelopment() {
                   >
                     {section.title}
                     <i
-                      className={`fa-solid fa-chevron-down transition-transform duration-300 ${expandedSections[section.title] ? "rotate-180" : ""
+                      className={`fa-solid text-2xl fa-chevron-down transition-transform duration-300 ${expandedSections[section.title] ? "rotate-180" : ""
                         }`}
                     ></i>
                   </button>

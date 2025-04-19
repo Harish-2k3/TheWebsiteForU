@@ -67,17 +67,40 @@ export default function Header() {
     }, 150); // ✅ Delay to ensure section load
   };
 
+  useEffect(() => {
+    if (location.pathname === "/" && location.state?.scrollTo) {
+      scrollToSection(location.state.scrollTo);
+      window.history.replaceState({}, document.title); // Clean up state after use
+    }
+  }, [location]);
+
+
   return (
     <div
       className={`fixed w-full z-[999] top-0 py-3 left-0 right-0 transition-all duration-300 ${isVisible ? "translate-y-0" : "-translate-y-full"
         } ${isScrolled || !isHomePage ? "bg-[#11778B]" : "bg-transparent"}`}
     >
       <div className="flex justify-between items-center lg:px-10 px-3 md:px-5 2xl:px-0 lg:max-w-[95rem] 3xl:px-0 mx-auto ">
-        <div className="cursor-pointer">
-          <Link to="/">
-            <img src="Header/lllArtboard 7.png" alt="Logo" className="w-60 md:w-80" />
-          </Link>
+        <div
+          className="cursor-pointer"
+          onClick={(e) => {
+            e.preventDefault();
+            setIsOpen(false);
+
+            if (location.pathname !== "/") {
+              navigate("/", { state: { scrollTo: "home" } }); // Navigate to home and pass scroll target
+            } else {
+              scrollToSection("home"); // Already on home, just scroll
+            }
+          }}
+        >
+          <img
+            src="Header/lllArtboard 7.png"
+            alt="Logo"
+            className="w-60 md:w-80"
+          />
         </div>
+
 
         {/* Mobile Menu Button */}
         <div className="lg:hidden menu-btn flex flex-row items-center gap-2">
@@ -85,7 +108,13 @@ export default function Header() {
             onClick={() => setIsOpen(!isOpen)}
             className="fa-solid fa-bars text-white text-2xl md:text-4xl cursor-pointer"
           ></i>
-          <Link to="tel:+1234567890" className="">
+          <Link
+            to="tel:+111 1122 3344"
+            onClick={() => {
+              setIsOpen(false); // Optional: if you want to close mobile nav
+              document.activeElement?.blur(); // This removes any persistent focus/hover
+            }}
+          >
             <div className="relative group w-10 md:w-15 md:h-15 text-center items-center h-10 z-10">
               <i className="fa-solid fa-phone text-[17px] md:text-2xl text-black bg-[#C6F806] p-3 md:p-4 rounded-full cursor-pointer transition duration-300 group-hover:opacity-0 absolute inset-0 flex items-center justify-center"></i>
               <i className="fa-solid fa-phone-volume text-black text-[17px] md:text-2xl bg-[#C6F806] p-3 md:p-4 rounded-full cursor-pointer transition duration-300 opacity-0 group-hover:opacity-100 absolute inset-0 flex items-center justify-center"></i>
@@ -149,10 +178,10 @@ export default function Header() {
         </nav>
 
         {/* Desktop Phone Button */}
-        <Link to="tel:+1234567890" className="hidden cursor-pointer lg:flex">
+        <Link to="tel:+111 1122 3344" className="hidden cursor-pointer lg:flex">
           <div className="flex items-center group relative ">
             <button className="bg-[#C6F806] cursor-pointer text-black font-medium px-4 py-2 rounded-full transition duration-300 hidden lg:block">
-              +1234567890
+            +111 1122 3344
             </button>
             <div className="relative w-10 h-10">
               <i className="fa-solid fa-phone text-[17px] text-black bg-[#C6F806] p-3 rounded-full transition duration-300 group-hover:opacity-0 absolute inset-0 flex items-center justify-center"></i>

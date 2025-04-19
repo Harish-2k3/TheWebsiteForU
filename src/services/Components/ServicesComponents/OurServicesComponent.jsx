@@ -53,7 +53,7 @@ export default function OurServicesComponent() {
 
             {/* Absolute Layer with Text and Button */}
             <div className="absolute bottom-0 left-0 right-0 flex flex-col items-center bg-gradient-to-t from-black/80 to-black/40 p-5">
-              <p className="text-white text-2xl font-bold">{service.title}</p>
+              <p className="text-white text-2xl text-center font-bold">{service.title}</p>
               <span className="text-white text-lg">{service.subtitle}</span>
 
               {/* Button */}
